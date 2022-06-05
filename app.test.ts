@@ -1,24 +1,38 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, hnFilter } from './app';
+
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
 nockBack.setMode('dryrun');
 
-import { scrapeLatestStories, hnFilter } from './app';
 jest.setTimeout(6000000);
 
-test('scrape stories', async () => {
-    jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
+describe('hn', () => {
+    test('scrape stories', async () => {
+        jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
+        const { nockDone } = await nockBack('hn-response.json')
+        const latestStories = await scrapeLatestHnStories();
+        nockDone();
+        expect(latestStories[0].title).toEqual("Contentlayer: Type-Safe Content SDK");
+        console.log(latestStories);
+    });
+
+});
+
+describe('dev.to', () => {
+    test('scrape stories', async () => {
+        const { nockDone } = await nockBack('devto-response.json')
+
+        const latestStories = await scrapeLatestDevToStories();
+        expect(latestStories[0].title).toEqual("Tye, starting and running multiple APIs with a single command");
+        console.log(latestStories);
+        nockDone();
 
 
-    const { nockDone } = await nockBack('hn-response.json')
+    });
 
-    const latestStories = await scrapeLatestStories();
-
-    nockDone()
-    expect(latestStories[0].title).toEqual("Contentlayer: Type-Safe Content SDK");
-    console.log(latestStories);
 });
 
 describe('hn filter', () => {

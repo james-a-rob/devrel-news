@@ -13,6 +13,12 @@ interface HNStory {
     created_at: string
 }
 
+interface DevToStory {
+    title: string
+    url: string
+    created_at: string
+}
+
 
 export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     const hasEnoughPoints = (story: HNStory) => {
@@ -29,9 +35,8 @@ export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
         return hasEnoughPoints(story) && isStory(story) && queryOnlyInTitle(story);
     });
 }
-export const scrapeLatestStories = async (): Promise<Story[]> => {
+export const scrapeLatestHnStories = async (): Promise<Story[]> => {
     const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 20);
-    console.log('yesterday', yesterday);
     let hnResponses: HNStory[][] = [];
     const searchTerms = [
         "api",
@@ -67,8 +72,21 @@ export const scrapeLatestStories = async (): Promise<Story[]> => {
         }
     } catch (e) {
         console.log(e);
-        console.log("fetch failed");
+        console.log("hn fetch failed");
         return [];
     }
     return hnResponses.flat().map((story: HNStory) => ({ title: story.title, url: story.url!, created_at: story.created_at }))
+}
+
+export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
+    let devToStories: DevToStory[];
+    try {
+        let devToResponse = await axios.get("https://dev.to/api/articles?tag=devrel&top=10");
+        devToStories = devToResponse.data;
+    } catch (e) {
+        console.log(e);
+        console.log("dev.to fetch failed");
+        return [];
+    }
+    return devToStories.map((story: DevToStory) => ({ title: story.title, url: story.url!, created_at: story.created_at }));
 }
