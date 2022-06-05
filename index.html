@@ -1,0 +1,83 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div>DevRel News</div>
+    <div class="stories-container">
+        <div class="story-container">Story1</div>
+        <div class="story-container">Story2</div>
+        <div class="story-container">Story3</div>
+        <div class="story-container">Story4</div>
+        <div class="story-container">Story5</div>
+        <div class="story-container">Story6</div>
+
+    </div>
+</body>
+
+<style>
+    body {
+        background: #eeeeee;
+    }
+
+    .stories-container {
+        display: grid;
+        background-color: #2196F3;
+        grid-template-columns: auto auto auto auto auto auto;
+        padding: 10px;
+    }
+
+    .story-container {
+        border: 1px solid red;
+        height: 300px;
+    }
+
+
+    @media only screen and (max-device-width: 1200px) {
+        body {
+            background: purple;
+
+        }
+
+        .stories-container {
+            grid-template-columns: auto auto auto auto;
+        }
+    }
+
+
+    @media only screen and (max-device-width: 800px) {
+        body {
+            background: orange;
+
+        }
+
+        .stories-container {
+            grid-template-columns: auto auto;
+        }
+    }
+
+
+    @media only screen and (max-device-width: 480px) {
+        body {
+            background: red;
+
+        }
+
+        .stories-container {
+            grid-template-columns: auto auto;
+        }
+    }
+
+    @media only screen and (max-device-width: 320px) {
+        body {
+            background: green;
+
+        }
+
+        .stories-container {
+            grid-template-columns: auto;
+        }
+    }
+</style>
