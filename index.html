@@ -1,83 +1,147 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div>DevRel News</div>
+    <div>
+        <h1>🥑 DevRel News</h1>
+        <h2>The latest DevRel news in one place</h2>
+        <h3>Covering topics like developer experience, open source, tech conferences & communitiy. </h3>
+    </div>
     <div class="stories-container">
-        <div class="story-container">Story1</div>
-        <div class="story-container">Story2</div>
-        <div class="story-container">Story3</div>
-        <div class="story-container">Story4</div>
-        <div class="story-container">Story5</div>
-        <div class="story-container">Story6</div>
+        <div class="story">
+            <div class="story-meta">
+                <img class="story-image" src="https://marketplace.stripe.com/marketplace-favicon.ico">
+                <div class="story-date">May 12th</div>
+            </div>
+            <div class="story-header">I don’t like things that write code for me”: Dev Tool with Mitchell Hashimoto
+            </div>
+            <div class="story-url">https://devrel-site.com/blah</div>
+        </div>
+        <div class="story">
+            <div class="story-meta">
+                <img class="story-image" src="https://marketplace.stripe.com/marketplace-favicon.ico">
+                <div class="story-date">May 12th</div>
+            </div>
+            <div class="story-header">Dev Tool with Mitchell Hashimoto</div>
+            <div class="story-url">https://devrel-site.com/blah</div>
+
+        </div>
+        <div class="story">Story3</div>
+        <div class="story">Story4</div>
+        <div class="story">Story5</div>
+        <div class="story">Story6</div>
 
     </div>
 </body>
 
 <style>
     body {
-        background: #eeeeee;
+        background: #fcfbfb;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    h1 {
+        font-family: 'Lobster', cursive;
+        color: #18b954;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-weight: 500;
+    }
+
+    h3 {
+        font-weight: 400;
     }
 
     .stories-container {
         display: grid;
-        background-color: #2196F3;
-        grid-template-columns: auto auto auto auto auto auto;
+        grid-template-columns: repeat(5, 1fr);
         padding: 10px;
     }
 
-    .story-container {
-        border: 1px solid red;
-        height: 300px;
+    .story {
+        margin: 4px;
+        background: white;
+        border: 1px solid #eeeeee;
+        height: 120px;
+        padding: 28px;
+    }
+
+    .story-meta {
+        display: flex;
+        margin-bottom: 4px;
+    }
+
+    .story-image {
+        width: 20px;
+        margin-right: 4px;
+    }
+
+    .story-header {
+        overflow-y: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    @media only screen and (max-device-width: 1500px) {
+        body {}
+
+        .stories-container {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
     }
 
 
-    @media only screen and (max-device-width: 1200px) {
-        body {
-            background: purple;
-
-        }
+    @media only screen and (max-device-width: 1100px) {
+        body {}
 
         .stories-container {
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: repeat(2, 1fr);
+
         }
     }
 
 
-    @media only screen and (max-device-width: 800px) {
-        body {
-            background: orange;
-
-        }
+    @media only screen and (max-device-width: 600px) {
+        body {}
 
         .stories-container {
-            grid-template-columns: auto auto;
+            grid-template-columns: repeat(1, 1fr);
+
         }
     }
 
 
     @media only screen and (max-device-width: 480px) {
-        body {
-            background: red;
-
-        }
+        body {}
 
         .stories-container {
-            grid-template-columns: auto auto;
+            grid-template-columns: repeat(1, 1fr);
+
         }
     }
 
     @media only screen and (max-device-width: 320px) {
-        body {
-            background: green;
-
-        }
+        body {}
 
         .stories-container {
-            grid-template-columns: auto;
+            grid-template-columns: repeat(1, 1fr);
+
         }
     }
 </style>
