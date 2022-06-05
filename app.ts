@@ -13,7 +13,6 @@ interface HNStory {
     created_at: string
 }
 
-const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 20);
 
 export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     const hasEnoughPoints = (story: HNStory) => {
@@ -31,6 +30,8 @@ export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     });
 }
 export const scrapeLatestStories = async (): Promise<Story[]> => {
+    const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 20);
+    console.log('yesterday', yesterday);
     let hnResponses: HNStory[][] = [];
     const searchTerms = [
         "api",
@@ -60,11 +61,9 @@ export const scrapeLatestStories = async (): Promise<Story[]> => {
     try {
         for (const searchTerm of searchTerms) {
             const hnResponse = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query="${searchTerm}"&numericFilters=created_at_i>${yesterday}&tags=story`);
-            // console.log(hnResponse.data.hits);
             const validStories = hnFilter(hnResponse.data.hits, searchTerm);
-            // console.log(validStories);
             hnResponses.push(validStories);
-            await new Promise(r => setTimeout(r, 1000));
+            await new Promise(r => setTimeout(r, 200));
         }
     } catch (e) {
         console.log(e);

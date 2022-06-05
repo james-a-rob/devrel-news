@@ -2,18 +2,22 @@ import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
 
 const nockBack = nock.back;
-nockBack.fixtures = '/fixtures/';
-nockBack.setMode('record');
+nockBack.fixtures = __dirname + '/nockFixtures';
+nockBack.setMode('dryrun');
 
 import { scrapeLatestStories, hnFilter } from './app';
-jest.setTimeout(60000);
+jest.setTimeout(6000000);
 
 test('scrape stories', async () => {
+    jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
+
+
     const { nockDone } = await nockBack('hn-response.json')
 
     const latestStories = await scrapeLatestStories();
-    nockDone()
 
+    nockDone()
+    expect(latestStories[0].title).toEqual("Contentlayer: Type-Safe Content SDK");
     console.log(latestStories);
 });
 
