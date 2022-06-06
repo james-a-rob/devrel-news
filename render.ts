@@ -1,19 +1,6 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = __importDefault(require("fs"));
-const app_1 = require("./app");
+import fs from 'fs';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, sortStoriesByDate } from './app';
+
 const head = () => {
     return `
 <head>
@@ -25,8 +12,9 @@ const head = () => {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-</head>`;
-};
+</head>`
+}
+
 const siteInfo = () => {
     return `
     <div>
@@ -34,8 +22,9 @@ const siteInfo = () => {
         <h2>The latest developer relations news in one place</h2>
         <h3>Covering topics like developer experience, open source, tech conferences & community. </h3>
     </div>
-    `;
-};
+    `
+}
+
 const css = () => {
     return `
     <style>
@@ -138,9 +127,10 @@ const css = () => {
             }
         }
     </style>
-    `;
-};
-const story = (storyData) => {
+    `
+}
+
+const story = (storyData: any) => {
     let domain = (new URL(storyData.url));
     return ` <div class="story">
     <div class="story-meta">
@@ -153,13 +143,17 @@ const story = (storyData) => {
     <div class="story-url">${domain.host}</div>
     <div class="">${storyData.created_at}</div>
 
-</div>`;
-};
-const render = () => __awaiter(void 0, void 0, void 0, function* () {
-    const latestHnStories = yield (0, app_1.scrapeLatestHnStories)();
-    const latestDevToStories = yield (0, app_1.scrapeLatestDevToStories)();
+</div>`
+}
+
+const render = async () => {
+    const latestHnStories = await scrapeLatestHnStories();
+    const latestDevToStories = await scrapeLatestDevToStories();
     console.log(latestHnStories);
-    const storiesData = (0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories]);
+
+    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories]);
+
+
     const html = `
     ${head()}
     ${css()}
@@ -167,11 +161,12 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
         ${siteInfo()}
         <div class="stories-container">
         ${storiesData.map((storyData) => {
-        return story(storyData);
+        return story(storyData)
     }).join('')}
     </div>
     </body>
-    `;
-    fs_1.default.writeFileSync('index-1234.html', html);
-});
+    `
+    fs.writeFileSync('index-1234.html', html);
+}
+
 console.log(render());

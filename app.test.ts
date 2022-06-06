@@ -1,6 +1,6 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, hnFilter } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, hnFilter, sortStoriesByDate } from './app';
 
 
 const nockBack = nock.back;
@@ -15,10 +15,9 @@ describe('hn', () => {
         const { nockDone } = await nockBack('hn-response.json')
         const latestStories = await scrapeLatestHnStories();
         nockDone();
-        expect(latestStories[0].title).toEqual("Contentlayer: Type-Safe Content SDK");
         console.log(latestStories);
+        expect(latestStories[0].title).toEqual("Tinygo: LLVM-based Go compiler for microcontrollers, WASM, and CLI tools");
     });
-
 });
 
 describe('dev.to', () => {
@@ -70,5 +69,26 @@ describe('hn filter', () => {
             num_comments: 1,
         }];
         expect(hnFilter(fakeHnStory, "github")).toEqual([]);
+    });
+});
+
+describe('helpers', () => {
+    test('sort stories by date', () => {
+        const fakeHnStories = [{
+            created_at: '2022-06-03T16:09:09.000Z',
+            title: 'Story 1',
+            url: 'github.com/devrelnews',
+            author: 'TCR19',
+            points: 5,
+            num_comments: 1,
+        }, {
+            created_at: '2022-06-06T16:09:09.000Z',
+            title: 'Story 2',
+            url: 'github.com/devrelnews',
+            author: 'TCR19',
+            points: 5,
+            num_comments: 1,
+        }];
+        expect(sortStoriesByDate(fakeHnStories)[0].title).toEqual("Story 2");
     });
 });

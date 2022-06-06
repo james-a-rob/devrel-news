@@ -3,7 +3,6 @@ interface Story {
     title: string
     url: string
     created_at: string
-
 }
 
 interface HNStory {
@@ -59,6 +58,8 @@ export const scrapeLatestHnStories = async (): Promise<Story[]> => {
         "keynote",
         "open source",
         "git",
+        "conference",
+        "tutorial",
         "github",
         "documentation",
         "developers",
@@ -81,7 +82,7 @@ export const scrapeLatestHnStories = async (): Promise<Story[]> => {
 export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
     let devToStories: DevToStory[];
     try {
-        let devToResponse = await axios.get("https://dev.to/api/articles?tag=devrel&top=10");
+        let devToResponse = await axios.get("https://dev.to/api/articles?tag=devrel&top=15");
         devToStories = devToResponse.data;
     } catch (e) {
         console.log(e);
@@ -89,4 +90,10 @@ export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
         return [];
     }
     return devToStories.map((story: DevToStory) => ({ title: story.title, url: story.url!, created_at: story.created_at }));
+}
+
+export const sortStoriesByDate = (stories: Story[]): Story[] => {
+    return stories.sort(function (a: Story, b: Story) {
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    });
 }
