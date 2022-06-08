@@ -41,8 +41,12 @@ export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     const queryOnlyInTitle = (story: HNStory) => {
         return story.title.toLowerCase().includes(searchTerm);
     }
+
+    const hasUrl = (story: HNStory) => {
+        return !!story.url;
+    }
     return stories.filter((story) => {
-        return hasEnoughPoints(story) && isStory(story) && queryOnlyInTitle(story);
+        return hasEnoughPoints(story) && isStory(story) && queryOnlyInTitle(story) && hasUrl(story)
     });
 }
 export const scrapeLatestHnStories = async (): Promise<Story[]> => {
