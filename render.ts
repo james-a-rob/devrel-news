@@ -172,7 +172,7 @@ const render = async () => {
     </div>
     </body>
     `
-    fs.writeFileSync('index-1234.html', html);
+    fs.writeFileSync('index.html', html);
 }
 
 console.log(render());

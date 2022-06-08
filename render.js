@@ -178,6 +178,6 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     </div>
     </body>
     `;
-    fs_1.default.writeFileSync('index-1234.html', html);
+    fs_1.default.writeFileSync('index.html', html);
 });
 console.log(render());
