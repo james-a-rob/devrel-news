@@ -10,5 +10,6 @@ jobs:
       - run: git status
       - run: git config --global user.email "jamesrobertsongittransfer@outlook.com"
       - run: git config --global user.name "james-a-rob"
+      - run: git add -A
       - run: git commit -m "trigger-build"
       - run: git push origin main
