@@ -1,7 +1,7 @@
 name: Devrel News
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/60 * * * *'
 jobs:
   Build-HTML:
     runs-on: ubuntu-latest
