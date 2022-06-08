@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: ls
+      - run: node --version
       - run: bash ./build-html.sh
       - run: git status
       - run: git config --global user.email "jamesrobertsongittransfer@outlook.com"
