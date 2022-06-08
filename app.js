@@ -27,8 +27,11 @@ const hnFilter = (stories, searchTerm) => {
     const queryOnlyInTitle = (story) => {
         return story.title.toLowerCase().includes(searchTerm);
     };
+    const hasUrl = (story) => {
+        return !!story.url;
+    };
     return stories.filter((story) => {
-        return hasEnoughPoints(story) && isStory(story) && queryOnlyInTitle(story) && !!story.url;
+        return hasEnoughPoints(story) && isStory(story) && queryOnlyInTitle(story) && hasUrl(story);
     });
 };
 exports.hnFilter = hnFilter;
