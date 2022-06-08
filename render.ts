@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, sortStoriesByDate } from './app';
+import moment from 'moment';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, sortStoriesByDate } from './app';
 
 const head = () => {
     return `
@@ -11,16 +12,16 @@ const head = () => {
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>`
 }
 
 const siteInfo = () => {
     return `
     <div>
-        <h1>🥑 DEVREL NEWS</h1>
+        <h1>🥑 DevRel News</h1>
         <h2>The latest developer relations news in one place</h2>
-        <h3>Covering topics like developer experience, open source, tech conferences & community. </h3>
+        <h3>Covering topics like developer experience, open source, conferences & community. </h3>
     </div>
     `
 }
@@ -29,24 +30,28 @@ const css = () => {
     return `
     <style>
         body {
-            background: #fcfbfb;
+            background: #fcfcfc;
             font-family: 'Source Sans Pro', sans-serif;
             color: #282828;
         }
 
         h1 {
-            font-family: 'Comfortaa', cursive;
+            font-family: 'Pacifico', cursive;
             color: #18b954;
             font-weight: 700;
             font-size: 20px;
         }
 
         h2 {
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 18px;
+
         }
 
         h3 {
             font-weight: 400;
+            font-size: 16px;
+
         }
 
         .stories-container {
@@ -70,7 +75,7 @@ const css = () => {
 
         .story-image {
             width: 20px;
-            margin-right: 4px;
+            margin-right: 6px;
         }
 
         .story-header {
@@ -131,17 +136,17 @@ const css = () => {
 }
 
 const story = (storyData: any) => {
+    console.log(storyData);
     let domain = (new URL(storyData.url));
     return ` <div class="story">
     <div class="story-meta">
-        <img class="story-image" src="https://marketplace.stripe.com/marketplace-favicon.ico">
-        <div class="story-date">May 12th</div>
+        <img onerror="this.style.display='none'" class="story-image" src="${storyData.image}">
+        <div class="story-url">${domain.host}</div>
     </div>
     <div class="story-header">
         <a target="_blank" href="${storyData.url}">${storyData.title}</a>
     </div>
-    <div class="story-url">${domain.host}</div>
-    <div class="">${storyData.created_at}</div>
+    <div class="story-date">${moment(storyData.created_at).fromNow()}</div>
 
 </div>`
 }
@@ -149,9 +154,10 @@ const story = (storyData: any) => {
 const render = async () => {
     const latestHnStories = await scrapeLatestHnStories();
     const latestDevToStories = await scrapeLatestDevToStories();
+    const latestDevrelxStories = await scrapeLatestDevrelxStories();
     console.log(latestHnStories);
 
-    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories]);
+    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories]);
 
 
     const html = `

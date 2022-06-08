@@ -17,10 +17,10 @@ const nock_1 = __importDefault(require("nock"));
 const app_1 = require("./app");
 const nockBack = nock_1.default.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('dryrun');
+nockBack.setMode('update');
 globals_1.jest.setTimeout(6000000);
 (0, globals_1.describe)('hn', () => {
-    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         globals_1.jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = yield nockBack('hn-response.json');
         const latestStories = yield (0, app_1.scrapeLatestHnStories)();
@@ -29,11 +29,19 @@ globals_1.jest.setTimeout(6000000);
         (0, globals_1.expect)(latestStories[0].title).toEqual("Tinygo: LLVM-based Go compiler for microcontrollers, WASM, and CLI tools");
     }));
 });
+(0, globals_1.describe)('devrelx', () => {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+        const { nockDone } = yield nockBack('devrelx-response.json');
+        const latestStories = yield (0, app_1.scrapeLatestDevrelxStories)();
+        nockDone();
+        (0, globals_1.expect)(latestStories[0].title).toEqual("State of Cloud Native Development: Who is using Kubernetes?");
+    }));
+});
 (0, globals_1.describe)('dev.to', () => {
     (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('devto-response.json');
         const latestStories = yield (0, app_1.scrapeLatestDevToStories)();
-        (0, globals_1.expect)(latestStories[0].title).toEqual("Tye, starting and running multiple APIs with a single command");
+        (0, globals_1.expect)(latestStories[0].title).toEqual("How do you get started in DevRel?");
         console.log(latestStories);
         nockDone();
     }));
@@ -79,17 +87,17 @@ globals_1.jest.setTimeout(6000000);
                 created_at: '2022-06-03T16:09:09.000Z',
                 title: 'Story 1',
                 url: 'github.com/devrelnews',
-                author: 'TCR19',
-                points: 5,
-                num_comments: 1,
+                image: "blah"
             }, {
                 created_at: '2022-06-06T16:09:09.000Z',
                 title: 'Story 2',
                 url: 'github.com/devrelnews',
-                author: 'TCR19',
-                points: 5,
-                num_comments: 1,
+                image: "blah"
             }];
         (0, globals_1.expect)((0, app_1.sortStoriesByDate)(fakeHnStories)[0].title).toEqual("Story 2");
     });
+    (0, globals_1.test)('url to image', () => __awaiter(void 0, void 0, void 0, function* () {
+        const iconLink = yield (0, app_1.urlToImage)("https://google.com");
+        (0, globals_1.expect)(iconLink).toEqual("https://google.com/favicon.ico");
+    }));
 });

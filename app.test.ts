@@ -1,16 +1,16 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, hnFilter, sortStoriesByDate } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, urlToImage } from './app';
 
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('dryrun');
+nockBack.setMode('update');
 
 jest.setTimeout(6000000);
 
 describe('hn', () => {
-    test('scrape stories', async () => {
+    test.only('scrape stories', async () => {
         jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = await nockBack('hn-response.json')
         const latestStories = await scrapeLatestHnStories();
@@ -20,12 +20,22 @@ describe('hn', () => {
     });
 });
 
+describe('devrelx', () => {
+    test('scrape stories', async () => {
+        const { nockDone } = await nockBack('devrelx-response.json')
+        const latestStories = await scrapeLatestDevrelxStories();
+        nockDone();
+        expect(latestStories[0].title).toEqual("State of Cloud Native Development: Who is using Kubernetes?");
+    });
+});
+
 describe('dev.to', () => {
     test('scrape stories', async () => {
         const { nockDone } = await nockBack('devto-response.json')
 
         const latestStories = await scrapeLatestDevToStories();
-        expect(latestStories[0].title).toEqual("Tye, starting and running multiple APIs with a single command");
+        expect(latestStories[0].title).toEqual("How do you get started in DevRel?");
+
         console.log(latestStories);
         nockDone();
 
@@ -78,17 +88,18 @@ describe('helpers', () => {
             created_at: '2022-06-03T16:09:09.000Z',
             title: 'Story 1',
             url: 'github.com/devrelnews',
-            author: 'TCR19',
-            points: 5,
-            num_comments: 1,
+            image: "blah"
         }, {
             created_at: '2022-06-06T16:09:09.000Z',
             title: 'Story 2',
             url: 'github.com/devrelnews',
-            author: 'TCR19',
-            points: 5,
-            num_comments: 1,
+            image: "blah"
         }];
         expect(sortStoriesByDate(fakeHnStories)[0].title).toEqual("Story 2");
+    });
+
+    test('url to image', async () => {
+        const iconLink = await urlToImage("https://google.com");
+        expect(iconLink).toEqual("https://google.com/favicon.ico");
     });
 });

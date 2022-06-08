@@ -1,8 +1,13 @@
 import axios from 'axios';
+import { XMLParser } from "fast-xml-parser";
+// @ts-ignore
+import webIconScraper from "web-icon-scraper";
+
 interface Story {
     title: string
     url: string
     created_at: string
+    image: string
 }
 
 interface HNStory {
@@ -16,6 +21,12 @@ interface DevToStory {
     title: string
     url: string
     created_at: string
+}
+
+interface DevrelxStory {
+    title: string
+    link: string
+    pubDate: string
 }
 
 
@@ -35,7 +46,7 @@ export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     });
 }
 export const scrapeLatestHnStories = async (): Promise<Story[]> => {
-    const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 20);
+    const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 60);
     let hnResponses: HNStory[][] = [];
     const searchTerms = [
         "api",
@@ -76,7 +87,7 @@ export const scrapeLatestHnStories = async (): Promise<Story[]> => {
         console.log("hn fetch failed");
         return [];
     }
-    return hnResponses.flat().map((story: HNStory) => ({ title: story.title, url: story.url!, created_at: story.created_at }))
+    return Promise.all(hnResponses.flat().map(async (story: HNStory) => ({ title: story.title, url: story.url!, created_at: story.created_at, image: await urlToImage(story.url!) })));
 }
 
 export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
@@ -89,11 +100,37 @@ export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
         console.log("dev.to fetch failed");
         return [];
     }
-    return devToStories.map((story: DevToStory) => ({ title: story.title, url: story.url!, created_at: story.created_at }));
+    return Promise.all(devToStories.map(async (story: DevToStory) => ({ title: story.title, url: story.url!, created_at: story.created_at, image: "https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" })));
+}
+
+export const scrapeLatestDevrelxStories = async (): Promise<Story[]> => {
+    let devrelxResponse = await axios.get("https://www.devrelx.com/blog-feed.xml");
+    const parser = new XMLParser();
+    let devrelxStories = parser.parse(devrelxResponse.data).rss.channel.item.slice(0, 10);
+    return Promise.all(devrelxStories.map(async (story: DevrelxStory) => ({ title: story.title, url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
+
 }
 
 export const sortStoriesByDate = (stories: Story[]): Story[] => {
     return stories.sort(function (a: Story, b: Story) {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     });
+}
+
+export const urlToImage = async (url: string) => {
+    console.log("convert url to image");
+    try {
+        const scrapeResponse = await webIconScraper({
+            url: url,
+            sort: 'des',
+            limit: 1,
+            checkStatus: false,
+            followRedirectsCount: 0
+        });
+        console.log(scrapeResponse);
+        return scrapeResponse.icons[0].link;
+    } catch (e) {
+        console.log(e);
+        return "";
+    }
 }

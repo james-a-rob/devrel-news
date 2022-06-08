@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
+const moment_1 = __importDefault(require("moment"));
 const app_1 = require("./app");
 const head = () => {
     return `
@@ -24,15 +25,15 @@ const head = () => {
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>`;
 };
 const siteInfo = () => {
     return `
     <div>
-        <h1>🥑 DEVREL NEWS</h1>
+        <h1>🥑 DevRel News</h1>
         <h2>The latest developer relations news in one place</h2>
-        <h3>Covering topics like developer experience, open source, tech conferences & community. </h3>
+        <h3>Covering topics like developer experience, open source, conferences & community. </h3>
     </div>
     `;
 };
@@ -40,24 +41,28 @@ const css = () => {
     return `
     <style>
         body {
-            background: #fcfbfb;
+            background: #fcfcfc;
             font-family: 'Source Sans Pro', sans-serif;
             color: #282828;
         }
 
         h1 {
-            font-family: 'Comfortaa', cursive;
+            font-family: 'Pacifico', cursive;
             color: #18b954;
             font-weight: 700;
             font-size: 20px;
         }
 
         h2 {
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 18px;
+
         }
 
         h3 {
             font-weight: 400;
+            font-size: 16px;
+
         }
 
         .stories-container {
@@ -81,7 +86,7 @@ const css = () => {
 
         .story-image {
             width: 20px;
-            margin-right: 4px;
+            margin-right: 6px;
         }
 
         .story-header {
@@ -141,25 +146,26 @@ const css = () => {
     `;
 };
 const story = (storyData) => {
+    console.log(storyData);
     let domain = (new URL(storyData.url));
     return ` <div class="story">
     <div class="story-meta">
-        <img class="story-image" src="https://marketplace.stripe.com/marketplace-favicon.ico">
-        <div class="story-date">May 12th</div>
+        <img onerror="this.style.display='none'" class="story-image" src="${storyData.image}">
+        <div class="story-url">${domain.host}</div>
     </div>
     <div class="story-header">
         <a target="_blank" href="${storyData.url}">${storyData.title}</a>
     </div>
-    <div class="story-url">${domain.host}</div>
-    <div class="">${storyData.created_at}</div>
+    <div class="story-date">${(0, moment_1.default)(storyData.created_at).fromNow()}</div>
 
 </div>`;
 };
 const render = () => __awaiter(void 0, void 0, void 0, function* () {
     const latestHnStories = yield (0, app_1.scrapeLatestHnStories)();
     const latestDevToStories = yield (0, app_1.scrapeLatestDevToStories)();
+    const latestDevrelxStories = yield (0, app_1.scrapeLatestDevrelxStories)();
     console.log(latestHnStories);
-    const storiesData = (0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories]);
+    const storiesData = (0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories]);
     const html = `
     ${head()}
     ${css()}

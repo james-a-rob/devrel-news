@@ -12,8 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sortStoriesByDate = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
+exports.urlToImage = exports.sortStoriesByDate = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
 const axios_1 = __importDefault(require("axios"));
+const fast_xml_parser_1 = require("fast-xml-parser");
+// @ts-ignore
+const web_icon_scraper_1 = __importDefault(require("web-icon-scraper"));
 const hnFilter = (stories, searchTerm) => {
     const hasEnoughPoints = (story) => {
         return story.points > 4;
@@ -30,7 +33,7 @@ const hnFilter = (stories, searchTerm) => {
 };
 exports.hnFilter = hnFilter;
 const scrapeLatestHnStories = () => __awaiter(void 0, void 0, void 0, function* () {
-    const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 20);
+    const yesterday = (Date.now() / 1000) - ((60 * 60 * 24) * 60);
     let hnResponses = [];
     const searchTerms = [
         "api",
@@ -72,7 +75,7 @@ const scrapeLatestHnStories = () => __awaiter(void 0, void 0, void 0, function* 
         console.log("hn fetch failed");
         return [];
     }
-    return hnResponses.flat().map((story) => ({ title: story.title, url: story.url, created_at: story.created_at }));
+    return Promise.all(hnResponses.flat().map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title, url: story.url, created_at: story.created_at, image: yield (0, exports.urlToImage)(story.url) }); })));
 });
 exports.scrapeLatestHnStories = scrapeLatestHnStories;
 const scrapeLatestDevToStories = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -86,12 +89,38 @@ const scrapeLatestDevToStories = () => __awaiter(void 0, void 0, void 0, functio
         console.log("dev.to fetch failed");
         return [];
     }
-    return devToStories.map((story) => ({ title: story.title, url: story.url, created_at: story.created_at }));
+    return Promise.all(devToStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title, url: story.url, created_at: story.created_at, image: "https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" }); })));
 });
 exports.scrapeLatestDevToStories = scrapeLatestDevToStories;
+const scrapeLatestDevrelxStories = () => __awaiter(void 0, void 0, void 0, function* () {
+    let devrelxResponse = yield axios_1.default.get("https://www.devrelx.com/blog-feed.xml");
+    const parser = new fast_xml_parser_1.XMLParser();
+    let devrelxStories = parser.parse(devrelxResponse.data).rss.channel.item.slice(0, 10);
+    return Promise.all(devrelxStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title, url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
+});
+exports.scrapeLatestDevrelxStories = scrapeLatestDevrelxStories;
 const sortStoriesByDate = (stories) => {
     return stories.sort(function (a, b) {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     });
 };
 exports.sortStoriesByDate = sortStoriesByDate;
+const urlToImage = (url) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("convert url to image");
+    try {
+        const scrapeResponse = yield (0, web_icon_scraper_1.default)({
+            url: url,
+            sort: 'des',
+            limit: 1,
+            checkStatus: false,
+            followRedirectsCount: 0
+        });
+        console.log(scrapeResponse);
+        return scrapeResponse.icons[0].link;
+    }
+    catch (e) {
+        console.log(e);
+        return "";
+    }
+});
+exports.urlToImage = urlToImage;
