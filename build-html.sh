@@ -1,3 +1,4 @@
+#!/bin/bash
 date
 date +"%FORMAT"
 var=$(date)
