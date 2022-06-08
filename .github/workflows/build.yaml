@@ -8,3 +8,5 @@ jobs:
       - run: ls
       - run: bash ./build-html.sh
       - run: git status
+      - run: git commit -m "trigger-build"
+      - run: git push origin main
