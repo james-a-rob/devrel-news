@@ -1,5 +1,6 @@
 name: Devrel News
 on:
+  push
   schedule:
     - cron: '*/60 * * * *'
 jobs:
