@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { XMLParser } from "fast-xml-parser";
-// @ts-ignore
-import webIconScraper from "web-icon-scraper";
+
 
 interface Story {
     title: string
@@ -74,7 +73,6 @@ export const scrapeLatestHnStories = async (): Promise<Story[]> => {
         "open source",
         "git",
         "conference",
-        "tutorial",
         "github",
         "documentation",
         "developers",
@@ -122,19 +120,8 @@ export const sortStoriesByDate = (stories: Story[]): Story[] => {
 }
 
 export const urlToImage = async (url: string) => {
-    console.log("convert url to image");
-    try {
-        const scrapeResponse = await webIconScraper({
-            url: url,
-            sort: 'des',
-            limit: 1,
-            checkStatus: false,
-            followRedirectsCount: 0
-        });
-        console.log(scrapeResponse);
-        return scrapeResponse.icons[0].link;
-    } catch (e) {
-        console.log(e);
-        return "";
-    }
+    console.log("convert url to image", url);
+    let domain = (new URL(url));
+    const host = `${domain.protocol}${domain.host}`;
+    return `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${host}&size=30`
 }

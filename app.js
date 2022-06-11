@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.urlToImage = exports.sortStoriesByDate = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fast_xml_parser_1 = require("fast-xml-parser");
-// @ts-ignore
-const web_icon_scraper_1 = __importDefault(require("web-icon-scraper"));
 const hnFilter = (stories, searchTerm) => {
     const hasEnoughPoints = (story) => {
         return story.points > 4;
@@ -60,7 +58,6 @@ const scrapeLatestHnStories = () => __awaiter(void 0, void 0, void 0, function* 
         "open source",
         "git",
         "conference",
-        "tutorial",
         "github",
         "documentation",
         "developers",
@@ -109,21 +106,9 @@ const sortStoriesByDate = (stories) => {
 };
 exports.sortStoriesByDate = sortStoriesByDate;
 const urlToImage = (url) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("convert url to image");
-    try {
-        const scrapeResponse = yield (0, web_icon_scraper_1.default)({
-            url: url,
-            sort: 'des',
-            limit: 1,
-            checkStatus: false,
-            followRedirectsCount: 0
-        });
-        console.log(scrapeResponse);
-        return scrapeResponse.icons[0].link;
-    }
-    catch (e) {
-        console.log(e);
-        return "";
-    }
+    console.log("convert url to image", url);
+    let domain = (new URL(url));
+    const host = `${domain.protocol}${domain.host}`;
+    return `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${host}&size=30`;
 });
 exports.urlToImage = urlToImage;
