@@ -1,6 +1,6 @@
 import fs from 'fs';
 import moment from 'moment';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, sortStoriesByDate } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, scrapeLatestGoogleNewsStories, sortStoriesByDate } from './app';
 
 const head = () => {
     return `
@@ -165,9 +165,10 @@ const render = async () => {
     const latestHnStories = await scrapeLatestHnStories();
     const latestDevToStories = await scrapeLatestDevToStories();
     const latestDevrelxStories = await scrapeLatestDevrelxStories();
+    const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     console.log(latestHnStories);
 
-    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories]);
+    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]);
 
 
     const html = `

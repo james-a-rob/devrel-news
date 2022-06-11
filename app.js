@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.urlToImage = exports.sortStoriesByDate = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
+exports.urlToImage = exports.sortStoriesByDate = exports.scrapeLatestGoogleNewsStories = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fast_xml_parser_1 = require("fast-xml-parser");
 const hnFilter = (stories, searchTerm) => {
@@ -99,6 +99,15 @@ const scrapeLatestDevrelxStories = () => __awaiter(void 0, void 0, void 0, funct
     return Promise.all(devrelxStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title, url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
 });
 exports.scrapeLatestDevrelxStories = scrapeLatestDevrelxStories;
+const scrapeLatestGoogleNewsStories = () => __awaiter(void 0, void 0, void 0, function* () {
+    const url = "https://news.google.com/rss/search?q=%22developer%20relations%22+when:300h&ceid=US:en&hl=en-US&gl=US";
+    let googleNewsResponse = yield axios_1.default.get(url);
+    const parser = new fast_xml_parser_1.XMLParser();
+    console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
+    let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
+    return Promise.all(googleNewsStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title.split(' - ')[0], url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
+});
+exports.scrapeLatestGoogleNewsStories = scrapeLatestGoogleNewsStories;
 const sortStoriesByDate = (stories) => {
     return stories.sort(function (a, b) {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();

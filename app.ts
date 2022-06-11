@@ -28,6 +28,12 @@ interface DevrelxStory {
     pubDate: string
 }
 
+interface GoogleNewsStory {
+    title: string
+    link: string
+    pubDate: string
+}
+
 
 export const hnFilter = (stories: HNStory[], searchTerm: string): HNStory[] => {
     const hasEnoughPoints = (story: HNStory) => {
@@ -110,6 +116,15 @@ export const scrapeLatestDevrelxStories = async (): Promise<Story[]> => {
     const parser = new XMLParser();
     let devrelxStories = parser.parse(devrelxResponse.data).rss.channel.item.slice(0, 10);
     return Promise.all(devrelxStories.map(async (story: DevrelxStory) => ({ title: story.title, url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
+}
+
+export const scrapeLatestGoogleNewsStories = async (): Promise<Story[]> => {
+    const url = "https://news.google.com/rss/search?q=%22developer%20relations%22+when:300h&ceid=US:en&hl=en-US&gl=US";
+    let googleNewsResponse = await axios.get(url);
+    const parser = new XMLParser();
+    console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
+    let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
+    return Promise.all(googleNewsStories.map(async (story: GoogleNewsStory) => ({ title: story.title.split(' - ')[0], url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
 
 }
 

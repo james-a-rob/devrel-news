@@ -174,8 +174,9 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     const latestHnStories = yield (0, app_1.scrapeLatestHnStories)();
     const latestDevToStories = yield (0, app_1.scrapeLatestDevToStories)();
     const latestDevrelxStories = yield (0, app_1.scrapeLatestDevrelxStories)();
+    const latestGoogleNewsStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
     console.log(latestHnStories);
-    const storiesData = (0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories]);
+    const storiesData = (0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]);
     const html = `
     ${head()}
     ${css()}

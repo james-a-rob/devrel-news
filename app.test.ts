@@ -1,16 +1,16 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, urlToImage } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestGoogleNewsStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, urlToImage } from './app';
 
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('update');
+nockBack.setMode('dryrun');
 
 jest.setTimeout(6000000);
 
 describe('hn', () => {
-    test.only('scrape stories', async () => {
+    test('scrape stories', async () => {
         jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = await nockBack('hn-response.json')
         const latestStories = await scrapeLatestHnStories();
@@ -35,6 +35,21 @@ describe('dev.to', () => {
 
         const latestStories = await scrapeLatestDevToStories();
         expect(latestStories[0].title).toEqual("How do you get started in DevRel?");
+
+        console.log(latestStories);
+        nockDone();
+
+
+    });
+
+});
+
+describe('google news', () => {
+    test.only('scrape stories', async () => {
+        const { nockDone } = await nockBack('googlenews-response.json')
+
+        const latestStories = await scrapeLatestGoogleNewsStories();
+        expect(latestStories[0].title).toEqual("CVP for Developer Relations Jeff Sandquist leaving Microsoft again");
 
         console.log(latestStories);
         nockDone();

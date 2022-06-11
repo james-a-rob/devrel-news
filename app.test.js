@@ -17,10 +17,10 @@ const nock_1 = __importDefault(require("nock"));
 const app_1 = require("./app");
 const nockBack = nock_1.default.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('update');
+nockBack.setMode('dryrun');
 globals_1.jest.setTimeout(6000000);
 (0, globals_1.describe)('hn', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         globals_1.jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = yield nockBack('hn-response.json');
         const latestStories = yield (0, app_1.scrapeLatestHnStories)();
@@ -42,6 +42,15 @@ globals_1.jest.setTimeout(6000000);
         const { nockDone } = yield nockBack('devto-response.json');
         const latestStories = yield (0, app_1.scrapeLatestDevToStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual("How do you get started in DevRel?");
+        console.log(latestStories);
+        nockDone();
+    }));
+});
+(0, globals_1.describe)('google news', () => {
+    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+        const { nockDone } = yield nockBack('googlenews-response.json');
+        const latestStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
+        (0, globals_1.expect)(latestStories[0].title).toEqual("CVP for Developer Relations Jeff Sandquist leaving Microsoft again");
         console.log(latestStories);
         nockDone();
     }));
