@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +46,13 @@
             font-weight: 400;
             font-size: 16px;
 
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8 0 8;
         }
 
         .stories-container {
@@ -129,7 +137,10 @@
     <body>
         
     <div>
-        <h1>🥑 DevRel News</h1>
+        <div class="header">
+            <h1>🥑 DevRel News</h1>
+            <span><a href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
+        </div>
         <h2>The latest developer relations news in one place</h2>
         <h3>Covering topics like developer experience, open source, conferences & community. </h3>
     </div>
@@ -137,13 +148,83 @@
         <div class="stories-container">
          <div class="story">
     <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:news.itsfoss.com&size=30">
+        <div class="story-url">news.itsfoss.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://news.itsfoss.com/atom-being-discontinued/">To Favor Microsoft VS Code, Microsoft's GitHub Is Killing GitHub's Atom Editor</a>
+    </div>
+    <div class="story-date">2 hours ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:slack.engineering&size=30">
+        <div class="story-url">slack.engineering</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://slack.engineering/building-self-driving-kafka-clusters-using-open-source-components/">Building Self-driving Kafka clusters using open source components</a>
+    </div>
+    <div class="story-date">8 hours ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:ruky.me&size=30">
+        <div class="story-url">ruky.me</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://ruky.me/2022/06/11/im-switching-form-vs-code-to-vs-codium/">I'm Switching Form VS Code to vs Codium</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/LemmyNet/lemmy">Open Source federated link aggregator in rust</a>
+    </div>
+    <div class="story-date">14 hours ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:seirdy.one&size=30">
+        <div class="story-url">seirdy.one</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://seirdy.one/posts/2022/06/10/cli-best-practices/">Best Practices for Inclusive CLIs</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:computerhistory.org&size=30">
+        <div class="story-url">computerhistory.org</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://computerhistory.org/blog/computings-woodstock/">Computing’s Woodstock: videos of the 1976 Los Alamos conference</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
         <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
         <div class="story-url">github.com</div>
     </div>
     <div class="story-header">
         <a target="_blank" href="https://github.com/FiloSottile/age/releases/tag/v1.1.0-rc.1">age v1.1.0-rc.1: plugin and YubiKeys support</a>
     </div>
-    <div class="story-date">5 hours ago</div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:blog.lohr.dev&size=30">
+        <div class="story-url">blog.lohr.dev</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://blog.lohr.dev/primary-display-windows">Changing the primary display using the Win32 API</a>
+    </div>
+    <div class="story-date">2 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -153,7 +234,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.infoq.com/presentations/java17-path-features-transition/">Java 17: The Path, Features, Tips and Tricks Panel</a>
     </div>
-    <div class="story-date">a day ago</div>
+    <div class="story-date">2 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -162,46 +243,6 @@
     </div>
     <div class="story-header">
         <a target="_blank" href="https://vectorjs.org/">Vector.js: an open source JavaScript library for creating interactive graphics</a>
-    </div>
-    <div class="story-date">a day ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
-        <div class="story-url">twitter.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://twitter.com/michelleglauser/status/1535296775451713536">Twilio's Developer Evangelist Michelle Glauser is being let go in layoff today</a>
-    </div>
-    <div class="story-date">a day ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:fossil-scm.org&size=30">
-        <div class="story-url">fossil-scm.org</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki">Fossil versus Git</a>
-    </div>
-    <div class="story-date">a day ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:yourstory.com&size=30">
-        <div class="story-url">yourstory.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://yourstory.com/2022/06/microsofts-upcoming-webinar-towards-azure-ai/amp">Get a deep-dive into Azure AI at Microsoft’s upcoming webinar</a>
-    </div>
-    <div class="story-date">2 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:sylpheed.sraoss.jp&size=30">
-        <div class="story-url">sylpheed.sraoss.jp</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://sylpheed.sraoss.jp/en/">Sylpheed email client: open source, cross-platform, lightweight, user-friendly</a>
     </div>
     <div class="story-date">2 days ago</div>
 
@@ -217,13 +258,53 @@
 
 </div> <div class="story">
     <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
+        <div class="story-url">twitter.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://twitter.com/michelleglauser/status/1535296775451713536">Twilio's Developer Evangelist Michelle Glauser is being let go in layoff today</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:fossil-scm.org&size=30">
+        <div class="story-url">fossil-scm.org</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki">Fossil versus Git</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:yourstory.com&size=30">
+        <div class="story-url">yourstory.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://yourstory.com/2022/06/microsofts-upcoming-webinar-towards-azure-ai/amp">Get a deep-dive into Azure AI at Microsoft’s upcoming webinar</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:sylpheed.sraoss.jp&size=30">
+        <div class="story-url">sylpheed.sraoss.jp</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://sylpheed.sraoss.jp/en/">Sylpheed email client: open source, cross-platform, lightweight, user-friendly</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
         <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
         <div class="story-url">dev.to</div>
     </div>
     <div class="story-header">
         <a target="_blank" href="https://dev.to/nimbusenv/how-to-improve-developer-experience-7-things-to-change-3c5e">How to Improve Developer Experience: 7 Things to Change</a>
     </div>
-    <div class="story-date">2 days ago</div>
+    <div class="story-date">3 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -233,7 +314,17 @@
     <div class="story-header">
         <a target="_blank" href="https://www.programmableweb.com/news/ankit-patel-wants-foursquare-to-offer-developers-meaningful-experiences/analysis/2022/06/09">Ankit Patel Wants Foursquare to Offer Developers Meaningful Experiences</a>
     </div>
-    <div class="story-date">2 days ago</div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.theregister.com&size=30">
+        <div class="story-url">www.theregister.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.theregister.com/2022/06/08/github_atom_dropped/">GitHub drops Atom: Open-source text editor mothballed by end of year</a>
+    </div>
+    <div class="story-date">3 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -243,7 +334,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.thecoinrepublic.com/2022/06/08/xrp-price-analysis-xrp-is-trapped-in-a-sideways-trend-calling-for-a-breakout/">XRP Price Analysis: XRP is trapped in a sideways trend, calling for a breakout.</a>
     </div>
-    <div class="story-date">3 days ago</div>
+    <div class="story-date">4 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -253,7 +344,7 @@
     <div class="story-header">
         <a target="_blank" href="https://siliconangle.com/2022/06/08/verizons-cloud-continuum-meets-mongodbs-multicloud-deployment-model-supercloud-really-mdbw22/">Verizon's cloud continuum meets MongoDB's multicloud deployment model (it's all supercloud, really)</a>
     </div>
-    <div class="story-date">3 days ago</div>
+    <div class="story-date">4 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -263,7 +354,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/devteam/getting-your-conference-talk-proposal-accepted-1cb6">Getting Your Conference Talk Proposal Accepted 🎙</a>
     </div>
-    <div class="story-date">3 days ago</div>
+    <div class="story-date">4 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -273,7 +364,7 @@
     <div class="story-header">
         <a target="_blank" href="https://blog.sigstore.dev/introducing-gitsign-9fd3f1b682aa">Introducing Gitsign – Keyless Git commit signing with Sigstore</a>
     </div>
-    <div class="story-date">3 days ago</div>
+    <div class="story-date">4 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -283,7 +374,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/avelino/from-wanting-to-be-part-of-the-cto-phd">From wanting to be part of the CTO</a>
     </div>
-    <div class="story-date">3 days ago</div>
+    <div class="story-date">4 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -293,7 +384,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.protocol.com/newsletters/protocol-enterprise/oracle-cerner-feinberg-databricks-intel">The man behind Larry Ellison’s health care gamble</a>
     </div>
-    <div class="story-date">4 days ago</div>
+    <div class="story-date">5 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -303,7 +394,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.onmsft.com/news/cvp-for-developer-relations-jeff-sandquist-leaving-microsoft-again">CVP for Developer Relations Jeff Sandquist leaving Microsoft again</a>
     </div>
-    <div class="story-date">4 days ago</div>
+    <div class="story-date">5 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -313,7 +404,7 @@
     <div class="story-header">
         <a target="_blank" href="https://devops.com/cd-foundation-announces-state-of-cd-in-2022-report-opens-third-annual-cdcon-with-new-project-cdevents-new-members/">CD Foundation Announces State of CD in 2022 Report, Opens Third Annual cdCon with New Project CDEvents, New...</a>
     </div>
-    <div class="story-date">4 days ago</div>
+    <div class="story-date">5 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -323,7 +414,7 @@
     <div class="story-header">
         <a target="_blank" href="https://thenextweb.com/news/react-js-conference-return-in-november-lgbtq-not-invited">React JavaScript conference to return in November – LGBTQ not invited</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -333,7 +424,7 @@
     <div class="story-header">
         <a target="_blank" href="https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html">UX Patterns for CLI Tools</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -343,7 +434,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.apple.com/newsroom/2022/06/apple-announces-winners-of-the-2022-apple-design-awards/">Apple announces winners of the 2022 Apple Design Awards</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -353,7 +444,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.apple.com/newsroom/2022/06/apple-provides-developers-with-even-more-powerful-technologies/">Apple provides developers with even more powerful technologies</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -363,7 +454,7 @@
     <div class="story-header">
         <a target="_blank" href="https://twitter.com/ReactEurasia/status/1533728596426166272">Large React JS Conference moves to Dubai</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -373,7 +464,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/jasonstcyr/becoming-a-leader-letting-it-go-27cc">Becoming a Leader – Letting it go</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -383,7 +474,17 @@
     <div class="story-header">
         <a target="_blank" href="https://www.youtube.com/watch?v=q5D55G7Ejs8">Apple WWDC 2022 keynote stream (YouTube)</a>
     </div>
-    <div class="story-date">5 days ago</div>
+    <div class="story-date">6 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.computerweekly.com&size=30">
+        <div class="story-url">www.computerweekly.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.computerweekly.com/blog/CW-Developer-Network/What-to-expect-at-MongoDB-World-2022">What to expect at MongoDB World 2022</a>
+    </div>
+    <div class="story-date">6 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -392,16 +493,6 @@
     </div>
     <div class="story-header">
         <a target="_blank" href="https://z.digitalclouds.dev/community/zsh_plugin_standard/">ZSH Plugin Standard</a>
-    </div>
-    <div class="story-date">5 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.dulwich.io&size=30">
-        <div class="story-url">www.dulwich.io</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.dulwich.io/">Dulwich is a Python implementation of the Git file formats and protocols</a>
     </div>
     <div class="story-date">6 days ago</div>
 
@@ -413,7 +504,7 @@
     <div class="story-header">
         <a target="_blank" href="https://github.com/tinygo-org/tinygo">Tinygo: LLVM-based Go compiler for microcontrollers, WASM, and CLI tools</a>
     </div>
-    <div class="story-date">6 days ago</div>
+    <div class="story-date">7 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -423,7 +514,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/banjtheman/how-i-became-a-developer-advocate-at-aws-5a01">How I became a Developer Advocate at AWS</a>
     </div>
-    <div class="story-date">6 days ago</div>
+    <div class="story-date">7 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -433,7 +524,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.cryptoglobe.com/latest/2022/06/former-developer-advocate-at-ripple-it-is-possible-for-xrp-to-one-day-hit-100/">Former Developer Advocate at Ripple: It Is Possible for $XRP to One Day Hit $100</a>
     </div>
-    <div class="story-date">6 days ago</div>
+    <div class="story-date">7 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -443,7 +534,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/linkbenjamin/the-adventures-of-blink-2-what-is-it-you-do-here-25e">The Adventures of Blink #2: What is it you DO here?</a>
     </div>
-    <div class="story-date">6 days ago</div>
+    <div class="story-date">7 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -453,7 +544,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.omgubuntu.co.uk/2022/05/ubuntu-22-10-new-text-editor">Ubuntu 22.10 replaces Gedit with new text editor</a>
     </div>
-    <div class="story-date">7 days ago</div>
+    <div class="story-date">8 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -463,7 +554,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.engadget.com/mozilla-firefox-offline-translation-plugin-190545071.html">Mozilla made a Firefox plugin for offline translation</a>
     </div>
-    <div class="story-date">8 days ago</div>
+    <div class="story-date">9 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -472,16 +563,6 @@
     </div>
     <div class="story-header">
         <a target="_blank" href="https://thenewstack.io/debunking-the-top-monolithic-application-myths/">Debunking the Top Monolithic Application Myths – The New Stack</a>
-    </div>
-    <div class="story-date">8 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.gamedeveloper.com&size=30">
-        <div class="story-url">www.gamedeveloper.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.gamedeveloper.com/business/-i-roblox-i-is-rolling-out-an-all-virtual-creator-conference">Roblox is rolling out an all-virtual creator conference</a>
     </div>
     <div class="story-date">9 days ago</div>
 
@@ -493,7 +574,7 @@
     <div class="story-header">
         <a target="_blank" href="https://vscodium.com/">VSCodium – Free/Libre Open Source Software Binaries of VS Code</a>
     </div>
-    <div class="story-date">9 days ago</div>
+    <div class="story-date">10 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -503,27 +584,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/glowreeyah/hi-id-love-to-meet-more-people-in-devrel-kindly-comment-if-youre-in-developer-relations-16bb">Hi, I'd love to meet more people in DevRel. Kindly comment if you're in Developer Relations.</a>
     </div>
-    <div class="story-date">9 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.techtarget.com&size=30">
-        <div class="story-url">www.techtarget.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.techtarget.com/searchsoftwarequality/news/252521019/Mirantis-Lens-extension-debuts-on-Docker-Desktop">Mirantis Lens extension debuts on Docker Desktop</a>
-    </div>
-    <div class="story-date">9 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.axios.com&size=30">
-        <div class="story-url">www.axios.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.axios.com/pro/fintech-deals/2022/06/02/canonical-crypto-20m-fund">Canonical Crypto raises $20M fund</a>
-    </div>
-    <div class="story-date">9 days ago</div>
+    <div class="story-date">10 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -533,17 +594,7 @@
     <div class="story-header">
         <a target="_blank" href="https://evilmartians.com/chronicles/figma-diy-building-a-color-system-plugin">Figma plugin DIY joy: build a color system plugin and learn the ropes</a>
     </div>
-    <div class="story-date">9 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.techtarget.com&size=30">
-        <div class="story-url">www.techtarget.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.techtarget.com/searchsoftwarequality/news/252520996/Project-Volterra-could-encourage-switch-to-Arm-based-PCs">Project Volterra could encourage switch to Arm-based PCs</a>
-    </div>
-    <div class="story-date">9 days ago</div>
+    <div class="story-date">10 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -553,7 +604,37 @@
     <div class="story-header">
         <a target="_blank" href="https://thenewstack.io/dont-drive-away-your-developers-it-processes-to-defeat-burnout/">Don't Drive Away Your Developers: IT Processes to Defeat Burnout</a>
     </div>
-    <div class="story-date">10 days ago</div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.techtarget.com&size=30">
+        <div class="story-url">www.techtarget.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.techtarget.com/searchsoftwarequality/news/252520996/Project-Volterra-could-encourage-switch-to-Arm-based-PCs">Project Volterra could encourage switch to Arm-based PCs</a>
+    </div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.techtarget.com&size=30">
+        <div class="story-url">www.techtarget.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.techtarget.com/searchsoftwarequality/news/252521019/Mirantis-Lens-extension-debuts-on-Docker-Desktop">Mirantis Lens extension debuts on Docker Desktop</a>
+    </div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.axios.com&size=30">
+        <div class="story-url">www.axios.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.axios.com/pro/fintech-deals/2022/06/02/canonical-crypto-20m-fund">Canonical Crypto raises $20M fund</a>
+    </div>
+    <div class="story-date">11 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -563,7 +644,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/postman/junior-dev-advocates-how-much-experience-does-one-need-for-developer-relations-3cme">Junior Dev Advocates 🥑? How much experience does one need for Developer Relations?</a>
     </div>
-    <div class="story-date">10 days ago</div>
+    <div class="story-date">11 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -573,7 +654,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/this-is-learning/tye-starting-and-running-multiple-apis-with-a-single-command-2j9h">Tye, starting and running multiple APIs with a single command</a>
     </div>
-    <div class="story-date">10 days ago</div>
+    <div class="story-date">11 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -583,7 +664,7 @@
     <div class="story-header">
         <a target="_blank" href="https://siliconangle.com/2022/06/01/expect-mongodb-world-event-join-thecube-june-8-mdbw22/">What to expect during the MongoDB World event: Join theCUBE June 8</a>
     </div>
-    <div class="story-date">11 days ago</div>
+    <div class="story-date">12 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -593,7 +674,7 @@
     <div class="story-header">
         <a target="_blank" href="https://thenewstack.io/how-platform-engineering-helps-manage-innovation-responsibly/">How Platform Engineering Helps Manage Innovation Responsibly – The New Stack</a>
     </div>
-    <div class="story-date">11 days ago</div>
+    <div class="story-date">12 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -603,7 +684,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/deepgram/what-do-you-like-most-about-your-favorite-communities-3c96">What do you like most about your favorite communities?</a>
     </div>
-    <div class="story-date">11 days ago</div>
+    <div class="story-date">12 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -613,7 +694,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.devrelx.com/post/state-of-cloud-native-development-who-is-using-kubernetes">State of Cloud Native Development: Who is using Kubernetes?</a>
     </div>
-    <div class="story-date">11 days ago</div>
+    <div class="story-date">12 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -623,7 +704,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.devrelx.com/post/neurodiversity-is-your-my-and-our-unfair-advantage">Neurodiversity is your, my, and our unfair advantage</a>
     </div>
-    <div class="story-date">12 days ago</div>
+    <div class="story-date">13 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -633,7 +714,7 @@
     <div class="story-header">
         <a target="_blank" href="https://kristoff.it/blog/software-you-can-love/">A conference about software you can love</a>
     </div>
-    <div class="story-date">15 days ago</div>
+    <div class="story-date">16 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -643,7 +724,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.forbes.com/sites/alexkonrad/2022/05/26/stripe-exclusive-interview-collison-brothers-95-billion-plan-to-stay-on-top/">The Collison Brothers Built Stripe into a $95B Unicorn</a>
     </div>
-    <div class="story-date">16 days ago</div>
+    <div class="story-date">17 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -653,7 +734,7 @@
     <div class="story-header">
         <a target="_blank" href="https://www.youtube.com/watch?v=8UNG3cQoOEc">Douglas Adams Keynote at Microsoft (1996)</a>
     </div>
-    <div class="story-date">17 days ago</div>
+    <div class="story-date">18 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -663,7 +744,7 @@
     <div class="story-header">
         <a target="_blank" href="https://about.gitlab.com/blog/2022/05/23/the-future-of-the-gitlab-web-ide/">The Future of the Gitlab Web IDE</a>
     </div>
-    <div class="story-date">19 days ago</div>
+    <div class="story-date">20 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -673,7 +754,7 @@
     <div class="story-header">
         <a target="_blank" href="https://hothardware.com/news/amd-computex-taipei-2022-keynote">AMD Ryzen 7000 Smokes Alder Lake at Computex Keynote as Zen 4 Excitement Builds</a>
     </div>
-    <div class="story-date">19 days ago</div>
+    <div class="story-date">20 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -683,7 +764,7 @@
     <div class="story-header">
         <a target="_blank" href="https://blog.jetbrains.com/idea/2022/05/take-part-in-the-new-ui-preview-for-your-jetbrains-ide/">Take Part in the New UI Preview for Your JetBrains IDE</a>
     </div>
-    <div class="story-date">19 days ago</div>
+    <div class="story-date">20 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -693,7 +774,7 @@
     <div class="story-header">
         <a target="_blank" href="https://dev.to/postman/moar-automation-in-devrel-build-a-trip-reports-system-5419">Moar Automation in DevRel - Build a Trip Reports System</a>
     </div>
-    <div class="story-date">19 days ago</div>
+    <div class="story-date">20 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
@@ -703,7 +784,7 @@
     <div class="story-header">
         <a target="_blank" href="https://zork.net/~st/jottings/kakoune-a-punk-rock-text-editor.html">Kakoune, a Punk Rock Text Editor</a>
     </div>
-    <div class="story-date">23 days ago</div>
+    <div class="story-date">24 days ago</div>
 
 </div> <div class="story">
     <div class="story-meta">

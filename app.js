@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.urlToImage = exports.sortStoriesByDate = exports.scrapeLatestGoogleNewsStories = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
+exports.urlToImage = exports.removeDuplicateStories = exports.sortStoriesByDate = exports.scrapeLatestGoogleNewsStories = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fast_xml_parser_1 = require("fast-xml-parser");
 const hnFilter = (stories, searchTerm) => {
@@ -114,6 +114,10 @@ const sortStoriesByDate = (stories) => {
     });
 };
 exports.sortStoriesByDate = sortStoriesByDate;
+const removeDuplicateStories = (stories) => {
+    return Object.values(stories.reduce((acc, cur) => Object.assign(acc, { [cur.url]: cur }), {}));
+};
+exports.removeDuplicateStories = removeDuplicateStories;
 const urlToImage = (url) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("convert url to image", url);
     let domain = (new URL(url));

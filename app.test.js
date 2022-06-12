@@ -26,7 +26,7 @@ globals_1.jest.setTimeout(6000000);
         const latestStories = yield (0, app_1.scrapeLatestHnStories)();
         nockDone();
         console.log(latestStories);
-        (0, globals_1.expect)(latestStories[0].title).toEqual("Tinygo: LLVM-based Go compiler for microcontrollers, WASM, and CLI tools");
+        (0, globals_1.expect)(latestStories[0].title).toEqual("Changing the primary display using the Win32 API");
     }));
 });
 (0, globals_1.describe)('devrelx', () => {
@@ -41,13 +41,13 @@ globals_1.jest.setTimeout(6000000);
     (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('devto-response.json');
         const latestStories = yield (0, app_1.scrapeLatestDevToStories)();
-        (0, globals_1.expect)(latestStories[0].title).toEqual("How do you get started in DevRel?");
+        (0, globals_1.expect)(latestStories[0].title).toEqual("Getting Your Conference Talk Proposal Accepted 🎙");
         console.log(latestStories);
         nockDone();
     }));
 });
 (0, globals_1.describe)('google news', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('googlenews-response.json');
         const latestStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual("CVP for Developer Relations Jeff Sandquist leaving Microsoft again");
@@ -105,8 +105,27 @@ globals_1.jest.setTimeout(6000000);
             }];
         (0, globals_1.expect)((0, app_1.sortStoriesByDate)(fakeHnStories)[0].title).toEqual("Story 2");
     });
+    globals_1.test.only('remove duplicates', () => {
+        const fakeHnStories = [{
+                created_at: '2022-06-03T16:09:09.000Z',
+                title: 'Story 1',
+                url: 'github.com/devrelnews',
+                image: "blah"
+            }, {
+                created_at: '2022-06-06T16:09:09.000Z',
+                title: 'Story 2',
+                url: 'github.com/devrelnews',
+                image: "blah"
+            }, {
+                created_at: '2022-06-06T16:09:09.000Z',
+                title: 'Story 3',
+                url: 'github.com/devrelnews',
+                image: "blah"
+            }];
+        (0, globals_1.expect)((0, app_1.removeDuplicateStories)(fakeHnStories).length).toEqual(1);
+    });
     (0, globals_1.test)('url to image', () => __awaiter(void 0, void 0, void 0, function* () {
         const iconLink = yield (0, app_1.urlToImage)("https://google.com");
-        (0, globals_1.expect)(iconLink).toEqual("https://google.com/favicon.ico");
+        (0, globals_1.expect)(iconLink).toEqual("https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:google.com&size=30");
     }));
 });

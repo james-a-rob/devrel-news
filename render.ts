@@ -1,6 +1,6 @@
 import fs from 'fs';
 import moment from 'moment';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, scrapeLatestGoogleNewsStories, sortStoriesByDate } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, scrapeLatestGoogleNewsStories, sortStoriesByDate, removeDuplicateStories } from './app';
 
 const head = () => {
     return `
@@ -9,6 +9,7 @@ const head = () => {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +30,10 @@ const head = () => {
 const siteInfo = () => {
     return `
     <div>
-        <h1>🥑 DevRel News</h1>
+        <div class="header">
+            <h1>🥑 DevRel News</h1>
+            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
+        </div>
         <h2>The latest developer relations news in one place</h2>
         <h3>Covering topics like developer experience, open source, conferences & community. </h3>
     </div>
@@ -62,6 +66,13 @@ const css = () => {
             font-weight: 400;
             font-size: 16px;
 
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8 0 8;
         }
 
         .stories-container {
@@ -168,7 +179,7 @@ const render = async () => {
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     console.log(latestHnStories);
 
-    const storiesData = sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]);
+    const storiesData = removeDuplicateStories(sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
 
 
     const html = `

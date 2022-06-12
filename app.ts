@@ -134,6 +134,10 @@ export const sortStoriesByDate = (stories: Story[]): Story[] => {
     });
 }
 
+export const removeDuplicateStories = (stories: Story[]): Story[] => {
+    return Object.values(stories.reduce((acc, cur) => Object.assign(acc, { [cur.url]: cur }), {}))
+}
+
 export const urlToImage = async (url: string) => {
     console.log("convert url to image", url);
     let domain = (new URL(url));

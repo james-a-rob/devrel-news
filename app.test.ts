@@ -1,6 +1,6 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestGoogleNewsStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, urlToImage } from './app';
+import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestGoogleNewsStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, removeDuplicateStories, urlToImage } from './app';
 
 
 const nockBack = nock.back;
@@ -16,7 +16,7 @@ describe('hn', () => {
         const latestStories = await scrapeLatestHnStories();
         nockDone();
         console.log(latestStories);
-        expect(latestStories[0].title).toEqual("Tinygo: LLVM-based Go compiler for microcontrollers, WASM, and CLI tools");
+        expect(latestStories[0].title).toEqual("Changing the primary display using the Win32 API");
     });
 });
 
@@ -34,7 +34,7 @@ describe('dev.to', () => {
         const { nockDone } = await nockBack('devto-response.json')
 
         const latestStories = await scrapeLatestDevToStories();
-        expect(latestStories[0].title).toEqual("How do you get started in DevRel?");
+        expect(latestStories[0].title).toEqual("Getting Your Conference Talk Proposal Accepted 🎙");
 
         console.log(latestStories);
         nockDone();
@@ -45,7 +45,7 @@ describe('dev.to', () => {
 });
 
 describe('google news', () => {
-    test.only('scrape stories', async () => {
+    test('scrape stories', async () => {
         const { nockDone } = await nockBack('googlenews-response.json')
 
         const latestStories = await scrapeLatestGoogleNewsStories();
@@ -113,8 +113,28 @@ describe('helpers', () => {
         expect(sortStoriesByDate(fakeHnStories)[0].title).toEqual("Story 2");
     });
 
+    test.only('remove duplicates', () => {
+        const fakeHnStories = [{
+            created_at: '2022-06-03T16:09:09.000Z',
+            title: 'Story 1',
+            url: 'github.com/devrelnews',
+            image: "blah"
+        }, {
+            created_at: '2022-06-06T16:09:09.000Z',
+            title: 'Story 2',
+            url: 'github.com/devrelnews',
+            image: "blah"
+        }, {
+            created_at: '2022-06-06T16:09:09.000Z',
+            title: 'Story 3',
+            url: 'github.com/devrelnews',
+            image: "blah"
+        }];
+        expect(removeDuplicateStories(fakeHnStories).length).toEqual(1);
+    });
+
     test('url to image', async () => {
         const iconLink = await urlToImage("https://google.com");
-        expect(iconLink).toEqual("https://google.com/favicon.ico");
+        expect(iconLink).toEqual("https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:google.com&size=30");
     });
 });
