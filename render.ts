@@ -179,7 +179,7 @@ const render = async () => {
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     console.log(latestHnStories);
 
-    const storiesData = removeDuplicateStories(sortStoriesByDate([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
+    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
 
 
     const html = `

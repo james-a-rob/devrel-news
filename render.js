@@ -44,7 +44,7 @@ const siteInfo = () => {
     <div>
         <div class="header">
             <h1>🥑 DevRel News</h1>
-            <span><a href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
+            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
         </div>
         <h2>The latest developer relations news in one place</h2>
         <h3>Covering topics like developer experience, open source, conferences & community. </h3>
@@ -187,7 +187,7 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     const latestDevrelxStories = yield (0, app_1.scrapeLatestDevrelxStories)();
     const latestGoogleNewsStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
     console.log(latestHnStories);
-    const storiesData = (0, app_1.removeDuplicateStories)((0, app_1.sortStoriesByDate)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
+    const storiesData = (0, app_1.sortStoriesByDate)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
     const html = `
     ${head()}
     ${css()}
