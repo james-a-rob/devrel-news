@@ -16,7 +16,7 @@ describe('hn', () => {
         const latestStories = await scrapeLatestHnStories();
         nockDone();
         console.log(latestStories);
-        expect(latestStories[0].title).toEqual("Changing the primary display using the Win32 API");
+        expect(latestStories[0].title).toEqual("Generating a GraphQL API from schema using SQLite");
     });
 });
 
@@ -113,7 +113,7 @@ describe('helpers', () => {
         expect(sortStoriesByDate(fakeHnStories)[0].title).toEqual("Story 2");
     });
 
-    test.only('remove duplicates', () => {
+    test('remove duplicates', () => {
         const fakeHnStories = [{
             created_at: '2022-06-03T16:09:09.000Z',
             title: 'Story 1',

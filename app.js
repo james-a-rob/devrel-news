@@ -100,12 +100,21 @@ const scrapeLatestDevrelxStories = () => __awaiter(void 0, void 0, void 0, funct
 });
 exports.scrapeLatestDevrelxStories = scrapeLatestDevrelxStories;
 const scrapeLatestGoogleNewsStories = () => __awaiter(void 0, void 0, void 0, function* () {
-    const url = "https://news.google.com/rss/search?q=%22developer%20relations%22+when:300h&ceid=US:en&hl=en-US&gl=US";
-    let googleNewsResponse = yield axios_1.default.get(url);
-    const parser = new fast_xml_parser_1.XMLParser();
-    console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
-    let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
-    return Promise.all(googleNewsStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title.split(' - ')[0], url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
+    const searchTerms = ['developer relations', 'developer conference', 'developer advocate'];
+    let googleNewsResponses = [];
+    try {
+        for (const searchTerm of searchTerms) {
+            const url = `https://news.google.com/rss/search?q="${searchTerm}"+when:300h&ceid=US:en&hl=en-US&gl=US`;
+            let googleNewsResponse = yield axios_1.default.get(url);
+            const parser = new fast_xml_parser_1.XMLParser();
+            console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
+            let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
+            googleNewsResponses.push(googleNewsStories);
+        }
+    }
+    catch (e) {
+    }
+    return Promise.all(googleNewsResponses.flat().map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title.split(' - ')[0], url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
 });
 exports.scrapeLatestGoogleNewsStories = scrapeLatestGoogleNewsStories;
 const sortStoriesByDate = (stories) => {

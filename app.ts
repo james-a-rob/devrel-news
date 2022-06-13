@@ -119,12 +119,23 @@ export const scrapeLatestDevrelxStories = async (): Promise<Story[]> => {
 }
 
 export const scrapeLatestGoogleNewsStories = async (): Promise<Story[]> => {
-    const url = "https://news.google.com/rss/search?q=%22developer%20relations%22+when:300h&ceid=US:en&hl=en-US&gl=US";
-    let googleNewsResponse = await axios.get(url);
-    const parser = new XMLParser();
-    console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
-    let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
-    return Promise.all(googleNewsStories.map(async (story: GoogleNewsStory) => ({ title: story.title.split(' - ')[0], url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
+    const searchTerms = ['developer relations', 'developer conference', 'developer advocate'];
+    let googleNewsResponses: GoogleNewsStory[][] = [];
+
+    try {
+        for (const searchTerm of searchTerms) {
+            const url = `https://news.google.com/rss/search?q="${searchTerm}"+when:300h&ceid=US:en&hl=en-US&gl=US`;
+            let googleNewsResponse = await axios.get(url);
+            const parser = new XMLParser();
+            console.log(parser.parse(googleNewsResponse.data).rss.channel.item);
+            let googleNewsStories = parser.parse(googleNewsResponse.data).rss.channel.item.slice(0, 20);
+            googleNewsResponses.push(googleNewsStories);
+        }
+    } catch (e) {
+
+    }
+
+    return Promise.all(googleNewsResponses.flat().map(async (story: GoogleNewsStory) => ({ title: story.title.split(' - ')[0], url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
 
 }
 
