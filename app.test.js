@@ -17,7 +17,7 @@ const nock_1 = __importDefault(require("nock"));
 const app_1 = require("./app");
 const nockBack = nock_1.default.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('wild');
+nockBack.setMode('dryrun');
 globals_1.jest.setTimeout(6000000);
 (0, globals_1.describe)('hn', () => {
     (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
@@ -47,7 +47,7 @@ globals_1.jest.setTimeout(6000000);
     }));
 });
 (0, globals_1.describe)('google news', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('googlenews-response.json');
         const latestStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual("CVP for Developer Relations Jeff Sandquist leaving Microsoft again");
@@ -105,7 +105,7 @@ globals_1.jest.setTimeout(6000000);
             }];
         (0, globals_1.expect)((0, app_1.sortStoriesByDate)(fakeHnStories)[0].title).toEqual("Story 2");
     });
-    globals_1.test.only('remove duplicates', () => {
+    (0, globals_1.test)('remove duplicates', () => {
         const fakeHnStories = [{
                 created_at: '2022-06-03T16:09:09.000Z',
                 title: 'Story 1',

@@ -19,6 +19,8 @@ const head = () => {
     return `
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevRel News - DevRel industry news in one place</title>
+    <meta name="description" content="Covering topics like developer experience, open source, conferences & community.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -189,16 +191,18 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(latestHnStories);
     const storiesData = (0, app_1.sortStoriesByDate)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
     const html = `
-    ${head()}
-    ${css()}
-    <body>
-        ${siteInfo()}
-        <div class="stories-container">
-        ${storiesData.map((storyData) => {
+    <html lang="en">
+        ${head()}
+        ${css()}
+        <body>
+            ${siteInfo()}
+            <div class="stories-container">
+            ${storiesData.map((storyData) => {
         return story(storyData);
     }).join('')}
-    </div>
-    </body>
+        </div>
+        </body>
+    </html>
     `;
     fs_1.default.writeFileSync('index.html', html);
 });
