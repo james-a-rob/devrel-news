@@ -18,6 +18,9 @@ classifier.addDocument(`Hot off the Press: Developer personalities, Low-code and
 classifier.addDocument(`Part 2. Content for Developers: What and How, Languages and more`, 'devrel');
 classifier.addDocument(`Building a Developer Program Strategy`, 'devrel');
 classifier.addDocument(`DevRel is a cost center, yet essential with Michael Heap`, 'devrel');
+classifier.addDocument(`Grafana releases OnCall open source project`, 'devrel');
+classifier.addDocument(`How can the United States build its Open Source Software policy?`, 'devrel');
+classifier.addDocument(`One single API to build CRM, Accounting, HRIS, and ATS Integrations`, 'devrel');
 
 
 classifier.addDocument('How Google, Sequoia are supporting growth plans of women-led startups', 'regular');
@@ -31,6 +34,12 @@ classifier.addDocument(`Jemiah Sius Articles and Insights`, 'regular');
 classifier.addDocument(`PagerDuty automates 'tech hygiene tasks' to raise the CX bar`, 'regular');
 classifier.addDocument(`Makers of ad blockers and browser privacy extensions fear the end is near`, 'regular');
 classifier.addDocument(`Tesla files for a three-way stock split to make its shares more affordable`, 'regular');
+classifier.addDocument(`Microsoft Teams may liven up meetings with casual game integration`, 'regular');
+classifier.addDocument(`The man behind Larry Ellison’s health care gamble`, 'regular');
+classifier.addDocument(`Amazon Elastic MapReduce Now Generally Available as a Serverless Offering`, 'regular');
+classifier.addDocument(`TECH BYTE: IOS 16`, 'regular');
+classifier.addDocument(`Boeing, UPS and Amazon AI on New AI Technologies`, 'regular');
+classifier.addDocument(`BioWare QA team unanimously votes to form a union`, 'regular');
 
 classifier.train();
 
@@ -43,7 +52,7 @@ export const mlFilter = (stories: any) => {
         console.log(classifications);
         const valDifference = (classifications[0].value - classifications[1].value);
         console.log(valDifference);
-        const articleOfInterest = valDifference > 0.005;
+        const articleOfInterest = valDifference > 0.0004;
         if (articleOfInterest) {
             return true;
         } else {

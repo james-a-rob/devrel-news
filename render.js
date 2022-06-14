@@ -63,6 +63,14 @@ const css = () => {
             color: #282828;
         }
 
+        a:link {
+            text-decoration: none;
+          }
+          
+        a:visited {
+            text-decoration: none;
+        }
+
         h1 {
             font-family: 'Pacifico', cursive;
             color: #18b954;
@@ -101,6 +109,7 @@ const css = () => {
             border: 1px solid #eeeeee;
             height: 120px;
             padding: 28px;
+            border-radius: 4px;
         }
 
         .story-meta {
