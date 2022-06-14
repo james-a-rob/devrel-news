@@ -5,7 +5,7 @@ import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestGoogleNews
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('dryrun');
+nockBack.setMode('wild');
 
 jest.setTimeout(6000000);
 
@@ -30,7 +30,7 @@ describe('devrelx', () => {
 });
 
 describe('dev.to', () => {
-    test('scrape stories', async () => {
+    test.only('scrape stories', async () => {
         const { nockDone } = await nockBack('devto-response.json')
 
         const latestStories = await scrapeLatestDevToStories();

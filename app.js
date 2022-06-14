@@ -83,6 +83,7 @@ const scrapeLatestDevToStories = () => __awaiter(void 0, void 0, void 0, functio
     try {
         let devToResponse = yield axios_1.default.get("https://dev.to/api/articles?tag=devrel&top=15");
         devToStories = devToResponse.data;
+        console.log(devToResponse.data);
     }
     catch (e) {
         console.log(e);

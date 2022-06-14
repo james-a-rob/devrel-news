@@ -11,23 +11,35 @@ classifier.addDocument('Adobe releases open source toolkit to counter visual mis
 classifier.addDocument('We Will Never Have Enough Software Developers (2020)', 'devrel');
 classifier.addDocument(`I'm Switching Form VS Code to vs Codium`, 'devrel');
 classifier.addDocument(`Grafana releases OnCall open source project`, 'devrel');
+classifier.addDocument(`7 Marketing Strategies for Your Software Development Content`, 'devrel');
+classifier.addDocument(`Tailoring tech content for different audiences`, 'devrel');
+classifier.addDocument(`The Documentation System`, 'devrel');
+classifier.addDocument(`Building DevRel Strategy with Sean Falconer`, 'devrel');
+classifier.addDocument(`Hot off the Press: Developer personalities, Low-code and No-code tools, Languages and more`, 'devrel');
+classifier.addDocument(`Part 2. Content for Developers: What and How, Languages and more`, 'devrel');
+classifier.addDocument(`Building a Developer Program Strategy`, 'devrel');
+classifier.addDocument(`DevRel is a cost center, yet essential with Michael Heap`, 'devrel');
 classifier.addDocument('How Google, Sequoia are supporting growth plans of women-led startups', 'regular');
 classifier.addDocument(`Apple's new 13-inch MacBook Pro with M2 chip goes on sale Friday`, 'regular');
 classifier.addDocument(`88% drop in Google searches for 'buying NFTs' as crypto market crashes`, 'regular');
-classifier.addDocument(`Jemiah Sius Articles and Insights`, 'regular');
 classifier.addDocument(`CDEvents Aims To Standardize CI/CD Interoperability`, 'regular');
 classifier.addDocument(`What to do if the Mac you need is delayed?`, 'regular');
 classifier.addDocument(`Apple sued over alleged patent infringement for Auto Unlock with Apple Watch feature`, 'regular');
 classifier.addDocument(`iOS 16 developer beta — how to download right now`, 'regular');
+classifier.addDocument(`Jemiah Sius Articles and Insights`, 'regular');
+classifier.addDocument(`PagerDuty automates 'tech hygiene tasks' to raise the CX bar`, 'regular');
+classifier.addDocument(`Makers of ad blockers and browser privacy extensions fear the end is near`, 'regular');
+classifier.addDocument(`Tesla files for a three-way stock split to make its shares more affordable`, 'regular');
 classifier.train();
 console.log(classifier.getClassifications(`we would like to propose our offer`)); // spam
 console.log(classifier.classify('we would like to propose our offer')); // spam
 const mlFilter = (stories) => {
     return stories.filter((story) => {
         const classifications = classifier.getClassifications(story.title);
+        console.log(classifications);
         const valDifference = (classifications[0].value - classifications[1].value);
         console.log(valDifference);
-        const articleOfInterest = valDifference > 0.01;
+        const articleOfInterest = valDifference > 0.005;
         if (articleOfInterest) {
             return true;
         }

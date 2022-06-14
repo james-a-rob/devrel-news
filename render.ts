@@ -33,7 +33,7 @@ const siteInfo = () => {
     return `
     <div>
         <div class="header">
-            <h1>🥑 DevRel News</h1>
+            <h1>DevRel News</h1>
             <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
         </div>
         <h2>The latest developer relations news in one place</h2>

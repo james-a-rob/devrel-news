@@ -103,6 +103,7 @@ export const scrapeLatestDevToStories = async (): Promise<Story[]> => {
     try {
         let devToResponse = await axios.get("https://dev.to/api/articles?tag=devrel&top=15");
         devToStories = devToResponse.data;
+        console.log(devToResponse.data)
     } catch (e) {
         console.log(e);
         console.log("dev.to fetch failed");
