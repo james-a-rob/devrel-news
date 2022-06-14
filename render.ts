@@ -1,7 +1,7 @@
 import fs from 'fs';
 import moment from 'moment';
 import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, scrapeLatestGoogleNewsStories, sortStoriesByDate, removeDuplicateStories } from './app';
-
+import { mlFilter } from './machinelearning';
 const head = () => {
     return `
 <head>
@@ -181,7 +181,7 @@ const render = async () => {
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     console.log(latestHnStories);
 
-    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
+    const storiesData = sortStoriesByDate(mlFilter(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories])));
 
 
     const html = `

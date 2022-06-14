@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const app_1 = require("./app");
+const machinelearning_1 = require("./machinelearning");
 const head = () => {
     return `
 <head>
@@ -189,7 +190,7 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     const latestDevrelxStories = yield (0, app_1.scrapeLatestDevrelxStories)();
     const latestGoogleNewsStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
     console.log(latestHnStories);
-    const storiesData = (0, app_1.sortStoriesByDate)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories]));
+    const storiesData = (0, app_1.sortStoriesByDate)((0, machinelearning_1.mlFilter)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories])));
     const html = `
     <html lang="en">
         ${head()}
