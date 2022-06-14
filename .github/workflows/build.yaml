@@ -7,7 +7,7 @@ on:
     - cron: '*/60 * * * *'
 jobs:
   Build-HTML:
-    runs-on: macos-12
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - run: ls
