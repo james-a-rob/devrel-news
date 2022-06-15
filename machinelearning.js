@@ -22,6 +22,7 @@ classifier.addDocument(`DevRel is a cost center, yet essential with Michael Heap
 classifier.addDocument(`Grafana releases OnCall open source project`, 'devrel');
 classifier.addDocument(`How can the United States build its Open Source Software policy?`, 'devrel');
 classifier.addDocument(`One single API to build CRM, Accounting, HRIS, and ATS Integrations`, 'devrel');
+classifier.addDocument(`A Git Origin Story (2018)`, 'devrel');
 classifier.addDocument('How Google, Sequoia are supporting growth plans of women-led startups', 'regular');
 classifier.addDocument(`Apple's new 13-inch MacBook Pro with M2 chip goes on sale Friday`, 'regular');
 classifier.addDocument(`88% drop in Google searches for 'buying NFTs' as crypto market crashes`, 'regular');
@@ -39,6 +40,11 @@ classifier.addDocument(`Amazon Elastic MapReduce Now Generally Available as a Se
 classifier.addDocument(`TECH BYTE: IOS 16`, 'regular');
 classifier.addDocument(`Boeing, UPS and Amazon AI on New AI Technologies`, 'regular');
 classifier.addDocument(`BioWare QA team unanimously votes to form a union`, 'regular');
+classifier.addDocument(`Google Weather is showing tablets some long-overdue love`, 'regular');
+classifier.addDocument(`LG Targets Apple for XR Display Partnership`, 'regular');
+classifier.addDocument(`Google Weather is showing tablets some long-overdue love`, 'regular');
+classifier.addDocument(`Is Apple’s Passkeys the beginning of the end for passwords?`, 'regular');
+classifier.addDocument(`Qualcomm wins EU court battle against $1b antitrust fine`, 'regular');
 classifier.train();
 console.log(classifier.getClassifications(`we would like to propose our offer`)); // spam
 console.log(classifier.classify('we would like to propose our offer')); // spam

@@ -33,11 +33,13 @@ const siteInfo = () => {
     return `
     <div>
         <div class="header">
-            <h1>DevRel News</h1>
-            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter"></i></a></span>
+            <h1 class="header-name">DevRel News</h1>
+            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter twitter"></i></a></span>
         </div>
+        <div class="info-container">
         <h2>The latest developer relations news in one place</h2>
         <h3>Covering topics like developer experience, open source, conferences & community. </h3>
+        </div>
     </div>
     `
 }
@@ -46,9 +48,10 @@ const css = () => {
     return `
     <style>
         body {
-            background: #fcfcfc;
+            background: #f2f2f2;
             font-family: 'Source Sans Pro', sans-serif;
             color: #282828;
+            margin:0px;
         }
 
         a:link {
@@ -57,6 +60,10 @@ const css = () => {
           
         a:visited {
             text-decoration: none;
+        }
+
+        .fab.twitter{
+            color:#1d9bf0;
         }
 
         h1 {
@@ -83,6 +90,15 @@ const css = () => {
             justify-content: space-between;
             align-items: center;
             padding: 0 8 0 8;
+            background: white;
+        }
+
+        .header-name{
+            margin:2px;
+        }
+
+        .info-container{
+            padding:0px 10px;
         }
 
         .stories-container {
@@ -96,7 +112,7 @@ const css = () => {
             background: white;
             border: 1px solid #eeeeee;
             height: 120px;
-            padding: 28px;
+            padding: 20px;
             border-radius: 4px;
         }
 
@@ -118,6 +134,30 @@ const css = () => {
             margin-bottom: 12px;
             font-weight: 700;
             font-size: 18px;
+        }
+
+        .hero-stories-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0px 10px 0px 10px;
+        }
+    
+        .hero-story-header {
+            font-size: 22px;
+            font-weight: 800;
+            padding: 10px;
+        }
+    
+        .hero-story {
+            border-radius: 4px;
+            margin: 4px;
+            background: white;
+    
+        }
+    
+        .hero-story-image {
+            width: 100%;
+    
         }
 
         @media only screen and (max-device-width: 1500px) {
@@ -154,11 +194,21 @@ const css = () => {
                 grid-template-columns: repeat(1, 1fr);
 
             }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
         }
 
         @media only screen and (max-device-width: 320px) {
 
             .stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-stories-container {
                 grid-template-columns: repeat(1, 1fr);
 
             }
@@ -183,6 +233,28 @@ const story = (storyData: any) => {
 </div>`
 }
 
+const heroStories = () => {
+    return `
+    <div class="hero-stories-container">
+    <div class="hero-story">
+        <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
+        <div class="hero-story-header">
+        <a target="_blank" href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community leadership: how can I uplift the voices of members while still
+            expressing my own vision?</a>
+            </div>
+    </div>
+    <div class="hero-story">
+        <img class="hero-story-image"
+            src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=1568">
+        <div class="hero-story-header">
+        <a target="_blank" href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">The Differences Between Conference Attendance Experience as an Advocate
+            versus Speaker and Attendee</a>
+            </div>
+    </div>
+</div>
+    `
+}
+
 const render = async () => {
     const latestHnStories = await scrapeLatestHnStories();
     const latestDevToStories = await scrapeLatestDevToStories();
@@ -199,6 +271,7 @@ const render = async () => {
         ${css()}
         <body>
             ${siteInfo()}
+            ${heroStories()}
             <div class="stories-container">
             ${storiesData.map((storyData) => {
         return story(storyData)
