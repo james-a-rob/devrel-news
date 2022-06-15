@@ -56,7 +56,7 @@ const css = () => {
 
         a:link {
             text-decoration: none;
-            color: #666666;
+            color: #414141;
           }
           
         a:visited {
@@ -101,6 +101,7 @@ const css = () => {
 
         .info-container{
             padding:0px 10px;
+            color:#414141;
         }
 
         .stories-container {

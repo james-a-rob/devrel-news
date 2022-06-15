@@ -68,10 +68,12 @@ const css = () => {
 
         a:link {
             text-decoration: none;
+            color: #414141;
           }
           
         a:visited {
             text-decoration: none;
+            color:#666666;
         }
 
         .fab.twitter{
@@ -111,6 +113,7 @@ const css = () => {
 
         .info-container{
             padding:0px 10px;
+            color:#414141;
         }
 
         .stories-container {
