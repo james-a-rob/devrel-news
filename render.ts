@@ -56,10 +56,12 @@ const css = () => {
 
         a:link {
             text-decoration: none;
+            color: #666666;
           }
           
         a:visited {
             text-decoration: none;
+            color:#666666;
         }
 
         .fab.twitter{
