@@ -19,6 +19,7 @@ const machinelearning_1 = require("./machinelearning");
 const head = () => {
     return `
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DevRel News - The latest developer relations articles and resources</title>
     <meta name="description" content="Covering topics like developer experience, open source, conferences & community.">
@@ -29,7 +30,7 @@ const head = () => {
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,400&display=swap" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRQSB2HB35"></script>
@@ -81,8 +82,8 @@ const css = () => {
         }
 
         h1 {
-            font-family: 'Pacifico', cursive;
-            color: #18b954;
+            font-family: 'Kanit', sans-serif;
+            color: #42EADDFF;
             font-weight: 700;
             font-size: 20px;
         }
@@ -153,14 +154,14 @@ const css = () => {
 
         .hero-stories-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 2fr 3fr;
             padding: 0px 10px 0px 10px;
         }
     
         .hero-story-header {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 800;
-            padding: 10px;
+            padding: 20px;
         }
     
         .hero-story {
@@ -175,7 +176,7 @@ const css = () => {
     
         }
 
-        @media (max-device-width: 1500px) {
+        @media (max-width: 1500px) {
 
             .stories-container {
                 grid-template-columns: repeat(3, 1fr);
@@ -184,7 +185,7 @@ const css = () => {
         }
 
 
-        @media (max-device-width: 1100px) {
+        @media (max-width: 1100px) {
 
             .stories-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -193,7 +194,7 @@ const css = () => {
         }
 
 
-        @media (max-device-width: 600px) {
+        @media (max-width: 600px) {
 
 
             .stories-container {
@@ -203,7 +204,7 @@ const css = () => {
         }
 
 
-        @media (max-device-width: 480px) {
+        @media (max-width: 480px) {
 
             .stories-container {
                 grid-template-columns: repeat(1, 1fr);
@@ -216,7 +217,7 @@ const css = () => {
             }
         }
 
-        @media (max-device-width: 320px) {
+        @media (max-width: 320px) {
             body{
                 background:red;
             }
