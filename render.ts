@@ -151,6 +151,10 @@ const css = () => {
             font-weight: 800;
             padding: 20px;
         }
+
+        .hero-story-header-large {
+            font-size: 36px;
+        }
     
         .hero-story {
             border-radius: 4px;
@@ -173,10 +177,15 @@ const css = () => {
         }
 
 
-        @media (max-width: 1100px) {
+        @media (max-width: 740px) {
 
             .stories-container {
                 grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
 
             }
         }
@@ -249,7 +258,7 @@ const heroStories = () => {
     <div class="hero-stories-container">
     <div class="hero-story">
         <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
-        <div class="hero-story-header">
+        <div class="hero-story-header hero-story-header-large">
         <a target="_blank" href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community leadership: how can I uplift the voices of members while still
             expressing my own vision?</a>
             </div>

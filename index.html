@@ -121,7 +121,7 @@
 
         .hero-stories-container {
             display: grid;
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 3fr 4fr;
             padding: 0px 10px 0px 10px;
         }
     
@@ -129,6 +129,10 @@
             font-size: 28px;
             font-weight: 800;
             padding: 20px;
+        }
+
+        .hero-story-header-large {
+            font-size: 36px;
         }
     
         .hero-story {
@@ -152,10 +156,15 @@
         }
 
 
-        @media (max-width: 1100px) {
+        @media (max-width: 740px) {
 
             .stories-container {
                 grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
 
             }
         }
@@ -222,7 +231,7 @@
     <div class="hero-stories-container">
     <div class="hero-story">
         <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
-        <div class="hero-story-header">
+        <div class="hero-story-header hero-story-header-large">
         <a target="_blank" href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community leadership: how can I uplift the voices of members while still
             expressing my own vision?</a>
             </div>
@@ -277,16 +286,6 @@
         <a target="_blank" href="https://www.coinspeaker.com/bewater-devcon-gathers-developers-from-east-to-west/">BeWater DevCon Gathers Developers from East to West to Bootstrap Blockchain Development Notions</a>
     </div>
     <div class="story-date">7 hours ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.theregister.com&size=30">
-        <div class="story-url">www.theregister.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.theregister.com/2022/06/16/new_versions_of_both_cinnamon/">Not a GNOME fan, and like the look of Windows? Try KDE Plasma or Cinnamon</a>
-    </div>
-    <div class="story-date">8 hours ago</div>
 
 </div> <div class="story">
     <div class="story-meta">
