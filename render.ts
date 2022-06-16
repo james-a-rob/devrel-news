@@ -71,7 +71,7 @@ const css = () => {
 
         h1 {
             font-family: 'Kanit', sans-serif;
-            color: #42EADDFF;
+            color: #cf23bd;
             font-weight: 700;
             font-size: 20px;
         }
@@ -92,7 +92,7 @@ const css = () => {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 8 0 8;
+            padding: 12px 8px 12px 8px;
             background: white;
         }
 
@@ -108,7 +108,7 @@ const css = () => {
         .stories-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            padding: 10px;
+            padding: 0px 10px;
         }
 
         .story {
@@ -143,7 +143,7 @@ const css = () => {
         .hero-stories-container {
             display: grid;
             grid-template-columns: 3fr 4fr;
-            padding: 0px 10px 0px 10px;
+            padding: 0px 10px 10px 10px;
         }
     
         .hero-story-header {
@@ -166,6 +166,13 @@ const css = () => {
         .hero-story-image {
             width: 100%;
     
+        }
+
+        .section-header{
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            color: #aeaeae;
+            padding: 0 12 0 12;
         }
 
         @media (max-width: 1400px) {
@@ -306,7 +313,9 @@ const render = async () => {
         ${css()}
         <body>
             ${siteInfo()}
+            <div class="section-header">HIGHLIGHTS</div>
             ${heroStories()}
+            <div class="section-header">LATEST</div>
             <div class="stories-container">
             ${storiesData.map((storyData) => {
         return story(storyData)
