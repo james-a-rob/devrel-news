@@ -168,11 +168,19 @@ const css = () => {
     
         }
 
-        @media (max-width: 1500px) {
+        @media (max-width: 1400px) {
 
             .stories-container {
                 grid-template-columns: repeat(3, 1fr);
 
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+
+            .hero-story-header-large {
+                font-size: 30px;
             }
         }
 
@@ -203,6 +211,7 @@ const css = () => {
                 grid-template-columns: repeat(1, 1fr);
 
             }
+            
         }
 
 
@@ -217,12 +226,18 @@ const css = () => {
                 grid-template-columns: repeat(1, 1fr);
 
             }
+
+            .hero-story-header {
+                font-size: 24px;
+            }
+
+            .hero-story-header-large {
+                font-size: 24px;
+            }
         }
 
         @media (max-width: 320px) {
-            body{
-                background:red;
-            }
+
             .stories-container {
                 grid-template-columns: repeat(1, 1fr);
 
