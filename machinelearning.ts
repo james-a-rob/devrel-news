@@ -61,7 +61,7 @@ export const mlFilter = (stories: any) => {
         console.log(classifications);
         const valDifference = (classifications[0].value - classifications[1].value);
         console.log(valDifference);
-        const articleOfInterest = valDifference > 0.0004;
+        const articleOfInterest = valDifference > 0.004;
         if (articleOfInterest) {
             return true;
         } else {

@@ -6,7 +6,7 @@ const head = () => {
     return `
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DevRel News - DevRel industry news in one place</title>
+    <title>DevRel News - The latest developer relations articles and resources</title>
     <meta name="description" content="Covering topics like developer experience, open source, conferences & community.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +163,7 @@ const css = () => {
     
         }
 
-        @media only screen and (max-device-width: 1500px) {
+        @media (max-device-width: 1500px) {
 
             .stories-container {
                 grid-template-columns: repeat(3, 1fr);
@@ -172,7 +172,7 @@ const css = () => {
         }
 
 
-        @media only screen and (max-device-width: 1100px) {
+        @media (max-device-width: 1100px) {
 
             .stories-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -181,7 +181,7 @@ const css = () => {
         }
 
 
-        @media only screen and (max-device-width: 600px) {
+        @media (max-device-width: 600px) {
 
 
             .stories-container {
@@ -191,7 +191,7 @@ const css = () => {
         }
 
 
-        @media only screen and (max-device-width: 480px) {
+        @media (max-device-width: 480px) {
 
             .stories-container {
                 grid-template-columns: repeat(1, 1fr);
@@ -204,8 +204,10 @@ const css = () => {
             }
         }
 
-        @media only screen and (max-device-width: 320px) {
-
+        @media (max-device-width: 320px) {
+            body{
+                background:red;
+            }
             .stories-container {
                 grid-template-columns: repeat(1, 1fr);
 
@@ -264,8 +266,8 @@ const render = async () => {
     const latestDevrelxStories = await scrapeLatestDevrelxStories();
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     console.log(latestHnStories);
-
-    const storiesData = sortStoriesByDate(mlFilter(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...latestGoogleNewsStories])));
+    const filteredGoogleNewsStories = mlFilter(latestGoogleNewsStories);
+    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories]));
 
 
     const html = `
