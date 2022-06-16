@@ -142,7 +142,7 @@ const css = () => {
 
         .hero-stories-container {
             display: grid;
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 3fr 4fr;
             padding: 0px 10px 0px 10px;
         }
     
@@ -186,6 +186,11 @@ const css = () => {
 
 
             .stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-stories-container {
                 grid-template-columns: repeat(1, 1fr);
 
             }

@@ -201,6 +201,11 @@ const css = () => {
                 grid-template-columns: repeat(1, 1fr);
 
             }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
         }
 
 
