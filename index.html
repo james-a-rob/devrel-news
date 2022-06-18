@@ -1,5 +1,6 @@
-<html lang="en">
 
+    <html lang="en">
+        
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,1412 +9,1144 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,400&display=swap" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRQSB2HB35"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-VRQSB2HB35');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-VRQSB2HB35');
     </script>
 </head>
+        
+    <style>
+        body {
+            background: #f2f2f2;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #282828;
+            margin:0px;
+        }
 
-<style>
-    body {
-        background: #f2f2f2;
-        font-family: 'Source Sans Pro', sans-serif;
-        color: #282828;
-        margin: 0px;
-    }
+        a:link {
+            text-decoration: none;
+            color: #414141;
+          }
+          
+        a:visited {
+            text-decoration: none;
+            color:#666666;
+        }
 
-    a:link {
-        text-decoration: none;
-        color: #414141;
-    }
+        .fab.twitter{
+            color:#1d9bf0;
+        }
 
-    a:visited {
-        text-decoration: none;
-        color: #666666;
-    }
+        h1 {
+            font-family: 'Kanit', sans-serif;
+            color: #cf23bd;
+            font-weight: 700;
+            font-size: 20px;
+        }
 
-    .fab.twitter {
-        color: #1d9bf0;
-    }
-
-    h1 {
-        font-family: 'Kanit', sans-serif;
-        color: #cf23bd;
-        font-weight: 700;
-        font-size: 20px;
-    }
-
-    h2 {
-        font-weight: 700;
-        font-size: 18px;
-
-    }
-
-    h3 {
-        font-weight: 400;
-        font-size: 16px;
-
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 8px 12px 8px;
-        background: white;
-    }
-
-    .header-name {
-        margin: 2px;
-    }
-
-    .info-container {
-        padding: 0px 10px;
-        color: #414141;
-    }
-
-    .stories-container {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        padding: 0px 10px;
-    }
-
-    .story {
-        margin: 4px;
-        background: white;
-        border: 1px solid #eeeeee;
-        height: 120px;
-        padding: 20px;
-        border-radius: 4px;
-    }
-
-    .story-meta {
-        display: flex;
-        margin-bottom: 4px;
-    }
-
-    .story-image {
-        width: 20px;
-        margin-right: 6px;
-    }
-
-    .story-header {
-        overflow-y: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        margin-bottom: 12px;
-        font-weight: 700;
-        font-size: 18px;
-    }
-
-    .hero-stories-container {
-        display: grid;
-        grid-template-columns: 3fr 4fr;
-        padding: 0px 10px 10px 10px;
-    }
-
-    .hero-story-header {
-        font-size: 26px;
-        font-weight: 800;
-        padding: 20px;
-    }
-
-    .hero-story-header-large {
-        font-size: 32px;
-    }
-
-    .hero-story {
-        border-radius: 4px;
-        margin: 4px;
-        background: white;
-
-    }
-
-    .hero-story-image {
-        width: 100%;
-
-    }
-
-    .hero-story-footer {
-        display: flex;
-        padding: 0 20 20 20;
-        align-items: center;
-    }
-
-    .hero-story-authot-image {
-        border-radius: 50%;
-        width: 30px;
-        margin-right: 4px;
-    }
-
-    .section-header {
-        font-family: 'Kanit', sans-serif;
-        font-weight: 400;
-        color: #aeaeae;
-        padding: 0 12 0 12;
-    }
-
-    @media (max-width: 1400px) {
-
-        .stories-container {
-            grid-template-columns: repeat(3, 1fr);
+        h2 {
+            font-weight: 700;
+            font-size: 18px;
 
         }
-    }
 
-    @media (max-width: 1000px) {
+        h3 {
+            font-weight: 400;
+            font-size: 16px;
 
-
-        .hero-story-header-large {
-            font-size: 30px;
         }
-    }
 
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 8px 12px 8px;
+            background: white;
+        }
 
-    @media (max-width: 740px) {
+        .header-name{
+            margin:2px;
+        }
+
+        .info-container{
+            padding:0px 10px;
+            color:#414141;
+        }
 
         .stories-container {
-            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 0px 10px;
+        }
 
+        .story {
+            margin: 4px;
+            background: white;
+            border: 1px solid #eeeeee;
+            height: 120px;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .story-meta {
+            display: flex;
+            margin-bottom: 4px;
+        }
+
+        .story-image {
+            width: 20px;
+            margin-right: 6px;
+        }
+
+        .story-header {
+            overflow-y: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 18px;
         }
 
         .hero-stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
+            display: grid;
+            grid-template-columns: 3fr 4fr;
+            padding: 0px 10px 10px 10px;
         }
-    }
-
-
-    @media (max-width: 600px) {
-
-
-        .stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
-        }
-
-        .hero-stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
-        }
-
-    }
-
-
-    @media (max-width: 480px) {
-
-        .stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
-        }
-
-        .hero-stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
-        }
-
+    
         .hero-story-header {
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: 800;
+            padding: 20px;
         }
 
         .hero-story-header-large {
-            font-size: 24px;
+            font-size: 32px;
         }
-    }
-
-    @media (max-width: 320px) {
-
-        .stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
+    
+        .hero-story {
+            border-radius: 4px;
+            margin: 4px;
+            background: white;
+    
+        }
+    
+        .hero-story-image {
+            width: 100%;
+    
         }
 
-        .hero-stories-container {
-            grid-template-columns: repeat(1, 1fr);
-
+        .hero-story-footer{
+            display:flex;
+            padding: 0 20 20 20;
+            align-items:center;
         }
-    }
-</style>
 
-<body>
+        .hero-story-authot-image{
+            border-radius:50%;
+            width:30px;
+            margin-right:4px;
+        }
 
+        .section-header{
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            color: #aeaeae;
+            padding: 0 12 0 12;
+        }
+
+        @media (max-width: 1400px) {
+
+            .stories-container {
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+
+            .hero-story-header-large {
+                font-size: 30px;
+            }
+        }
+
+
+        @media (max-width: 740px) {
+
+            .stories-container {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+
+            .stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+            
+        }
+
+
+        @media (max-width: 480px) {
+
+            .stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-story-header {
+                font-size: 24px;
+            }
+
+            .hero-story-header-large {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 320px) {
+
+            .stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-stories-container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+        }
+    </style>
+    
+        <body>
+            
     <div>
         <div class="header">
             <h1 class="header-name">DevRel News</h1>
-            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i
-                        class="fab fa-twitter twitter"></i></a></span>
+            <span><a target="_blank" href="https://www.twitter.com/james_a_rob"><i class="fab fa-twitter twitter"></i></a></span>
         </div>
         <div class="info-container">
-            <h2>The latest developer relations news in one place</h2>
-            <h3>Covering topics like developer experience, open source, conferences & community. </h3>
+        <h2>The latest developer relations news in one place</h2>
+        <h3>Covering topics like developer experience, open source, conferences & community. </h3>
         </div>
     </div>
-
-    <div class="section-header">HIGHLIGHTS</div>
-
+    
+            <div class="section-header">HIGHLIGHTS</div>
+            
     <div class="hero-stories-container">
-        <div class="hero-story">
-            <div class="hero-story-body">
-                <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
-                <div class="hero-story-header hero-story-header-large">
-                    <a target="_blank"
-                        href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community
-                        leadership: how can I uplift the voices of members while still
-                        expressing my own vision?</a>
-                </div>
-            </div>
-            <div class="hero-story-footer">
-                <div class="hero-story-author">
-                    <img class="hero-story-authot-image"
-                        src="https://miro.medium.com/fit/c/96/96/0*-JX3HagHYWFY-LiS.jpeg" />
-                </div>
-
-                <div class="hero-story-author">Fabian Pfortmüller</div>
-            </div>
-        </div>
-        <div class="hero-story">
-            <div class="hero-story-body">
-                <img class="hero-story-image"
-                    src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=156">
-                <div class="hero-story-header hero-story-header-large">
-                    <a target="_blank"
-                        href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">Community
-                        leadership: how can I uplift the voices of members while still
-                        expressing my own vision?</a>
-                </div>
-            </div>
-            <div class="hero-story-footer">
-                <div class="hero-story-author">
-                    <img class="hero-story-authot-image"
-                        src="https://pbs.twimg.com/profile_images/978877201780178944/yP_1IiYQ_400x400.jpg" />
-                </div>
-
-                <div class="hero-story-author">Carly Richmond</div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="section-header">LATEST</div>
-    <div class="stories-container">
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:gamefreaks365.com&size=30">
-                <div class="story-url">gamefreaks365.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://gamefreaks365.com/hidden-hunter-launches-in-roblox/">Hidden Hunter
-                    launches in Roblox</a>
-            </div>
-            <div class="story-date">11 hours ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.ghacks.net&size=30">
-                <div class="story-url">www.ghacks.net</div>
-            </div>
-            <div class="story-header">
+    <div class="hero-story">
+    <div class="hero-story-body">
+            <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
+            <div class="hero-story-header hero-story-header-large">
                 <a target="_blank"
-                    href="https://www.ghacks.net/2022/06/17/microsoft-store-no-astronomical-pricing-and-paid-open-source-or-free-copycat-applications-anymore/">Microsoft
-                    finally updates store rules to ban paid copycat open source projects</a>
+                    href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community
+                    leadership: how can I uplift the voices of members while still
+                    expressing my own vision?</a>
             </div>
-            <div class="story-date">21 hours ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:fleetdm.com&size=30">
-                <div class="story-url">fleetdm.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://fleetdm.com/securing/lossless-yubikeys-with-yubitrak-and-airtag">Keep
-                    track of your Yubikeys with this open source 3D model and AirTag</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.i-programmer.info&size=30">
-                <div class="story-url">www.i-programmer.info</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.i-programmer.info/news/112-theory/15512-new-record-from-google-100-trillionth-digit-of-pi.html">New
-                    Record From Google</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:seraf.dev&size=30">
-                <div class="story-url">seraf.dev</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://seraf.dev/how-magit-improved-my-workflow-and-my-git-knowledge-c6ccca991e19?gi=857e387761f5">Magit
-                    improved my workflow and my Git knowledge</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.citusdata.com&size=30">
-                <div class="story-url">www.citusdata.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.citusdata.com/blog/2022/06/17/citus-11-goes-fully-open-source/">Citus 11 for
-                    Postgres goes fully open source, with query from any node</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:ploopy.co&size=30">
-                <div class="story-url">ploopy.co</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://ploopy.co/thumb-trackball/">Ploopy open source thumb trackball</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://github.com/citusdata/citus/pull/6008">Citus enterprise features are
-                    open source now</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:freakingrectangle.com&size=30">
-                <div class="story-url">freakingrectangle.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://freakingrectangle.com/2022/04/15/how-to-freaking-hire-great-developers/">How to
-                    Freaking Find Great Developers by Having Them Read Code</a>
-            </div>
-            <div class="story-date">a day ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.idropnews.com&size=30">
-                <div class="story-url">www.idropnews.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.idropnews.com/news/3-reasons-to-install-the-developer-betas-and-5-reasons-why-you-shouldnt/189117/">3
-                    Reasons to Install the Developer Betas (And 5 Reasons Why You Shouldn't)</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:pvs-studio.com&size=30">
-                <div class="story-url">pvs-studio.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://pvs-studio.com/en/blog/posts/0951/">Embedded system developers do not
-                    know how to program</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://github.com/citusdata/citus/commit/184c7c0bce6b7bca61d25b828855fac5fba64816">Make
-                    enterprise features open source</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:gist.github.com&size=30">
-                <div class="story-url">gist.github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://gist.github.com/slimsag/c01bb6508e3dfa744bf3bdafa0cfe07f">Microsoft: We
-                    heart open source developers ... not?</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:nextdns.github.io&size=30">
-                <div class="story-url">nextdns.github.io</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://nextdns.github.io/api/">NextDNS API</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoworld.com&size=30">
-                <div class="story-url">www.infoworld.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.infoworld.com/article/3663677/oktas-matt-raible-how-i-became-a-java-hipster.html">Okta’s
-                    Matt Raible: How I became a Java hipster</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.coinspeaker.com&size=30">
-                <div class="story-url">www.coinspeaker.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.coinspeaker.com/bewater-devcon-gathers-developers-from-east-to-west/">BeWater
-                    DevCon Gathers Developers from East to West to Bootstrap Blockchain Development Notions</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:canvatechblog.com&size=30">
-                <div class="story-url">canvatechblog.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://canvatechblog.com/we-put-half-a-million-files-in-one-git-repository-heres-what-we-learned-ec734a764181">We
-                    Put Half a Million Files in One Git Repository, Here’s What We Learned</a>
-            </div>
-            <div class="story-date">2 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://github.com/omnisharp/omnisharp-vscode/issues/5276">Microsoft discloses
-                    plans to turn parts of VS Code C# extension to closed source</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://github.com/OmniSharp/omnisharp-vscode/issues/5276">A roadmap update on
-                    the VS Code C# extension</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:visualstudiomagazine.com&size=30">
-                <div class="story-url">visualstudiomagazine.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://visualstudiomagazine.com/articles/2022/06/15/vsm-arm-vs.aspx">Visual
-                    Studio 2022 17.3 Preview 2 Is First Native Arm64 Release</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.linuxjournal.com&size=30">
-                <div class="story-url">www.linuxjournal.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.linuxjournal.com/content/git-origin-story">A Git Origin Story
-                    (2018)</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenewstack.io&size=30">
-                <div class="story-url">thenewstack.io</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://thenewstack.io/cloud-native-day-2-operations-why-this-begins-on-day-0/">Cloud Native
-                    Day 2 Operations: Why This Begins on Day 0</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/devrel-how-technical-communities-can-maximize-impact-success-the-2022-community-led-summit">DevRel:
-                    How Technical Communities Can Maximize Impact & Success</a>
-            </div>
-            <div class="story-date">3 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/linkbenjamin/the-adventures-of-blink-4-i-win-when-you-win-35ao">The Adventures
-                    of Blink #4: I Win When You Win</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:dvc.org&size=30">
-                <div class="story-url">dvc.org</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dvc.org/blog/DVC-VS-Code-extension">VS Code extension that manages
-                    Machine Learning experiments</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:documentation.divio.com&size=30">
-                <div class="story-url">documentation.divio.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://documentation.divio.com">The Documentation System</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/codingwithryan/7-marketing-strategies-for-your-software-development-content-1lf4">7
-                    Marketing Strategies for Your Software Development Content</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:reproof.app&size=30">
-                <div class="story-url">reproof.app</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://reproof.app/blog/document-first-then-build">Write documentation first,
-                    then build</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/ceceliacreates/tailoring-tech-content-for-different-audiences-15nk">Tailoring
-                    tech content for different audiences</a>
-            </div>
-            <div class="story-date">4 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:corsix.github.io&size=30">
-                <div class="story-url">corsix.github.io</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://corsix.github.io/dynasm-doc/index.html">The Unofficial DynASM
-                    Documentation</a>
-            </div>
-            <div class="story-date">5 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:securityboulevard.com&size=30">
-                <div class="story-url">securityboulevard.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://securityboulevard.com/2022/06/wicked-good-development-dev-nexus-reflections-and-conversations-part-3/">Wicked
-                    Good Development: Dev Nexus Reflections and Conversations Part 3</a>
-            </div>
-            <div class="story-date">5 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.vg247.com&size=30">
-                <div class="story-url">www.vg247.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.vg247.com/a44-kepler-interactive-unique-co-op-publishing-model">A44
-                    on the strength of game publishing co-op, Kepler Interactive: “If Kepler does better, we all do
-                    better”</a>
-            </div>
-            <div class="story-date">5 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenewstack.io&size=30">
-                <div class="story-url">thenewstack.io</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://thenewstack.io/apache-cassandra-4-1-building-the-database-your-kids-will-use/">Apache
-                    Cassandra 4.1: Building the Database Your Kids Will Use</a>
-            </div>
-            <div class="story-date">5 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:news.itsfoss.com&size=30">
-                <div class="story-url">news.itsfoss.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://news.itsfoss.com/atom-being-discontinued/">To Favor Microsoft VS Code,
-                    Microsoft's GitHub Is Killing GitHub's Atom Editor</a>
-            </div>
-            <div class="story-date">6 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.coindesk.com&size=30">
-                <div class="story-url">www.coindesk.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.coindesk.com/business/2022/06/12/texas-feels-like-bitcoin-country-probably-because-i-was-there-for-a-bitcoin-conference/">Texas
-                    Feels Like Bitcoin Country (Maybe Because I Was There for a Bitcoin Conference)</a>
-            </div>
-            <div class="story-date">6 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:seirdy.one&size=30">
-                <div class="story-url">seirdy.one</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://seirdy.one/posts/2022/06/10/cli-best-practices/">Best Practices for
-                    Inclusive CLIs</a>
-            </div>
-            <div class="story-date">7 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:computerhistory.org&size=30">
-                <div class="story-url">computerhistory.org</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://computerhistory.org/blog/computings-woodstock/">Computing’s Woodstock:
-                    videos of the 1976 Los Alamos conference</a>
-            </div>
-            <div class="story-date">7 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:ruky.me&size=30">
-                <div class="story-url">ruky.me</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://ruky.me/2022/06/11/im-switching-form-vs-code-to-vs-codium/">I'm
-                    Switching Form VS Code to vs Codium</a>
-            </div>
-            <div class="story-date">7 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://github.com/FiloSottile/age/releases/tag/v1.1.0-rc.1">age v1.1.0-rc.1:
-                    plugin and YubiKeys support</a>
-            </div>
-            <div class="story-date">7 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoq.com&size=30">
-                <div class="story-url">www.infoq.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.infoq.com/presentations/java17-path-features-transition/">Java 17:
-                    the Path, Features, Tips and Tricks Panel</a>
-            </div>
-            <div class="story-date">8 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
-                <div class="story-url">twitter.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://twitter.com/michelleglauser/status/1535296775451713536">Twilio's
-                    Developer Evangelist Michelle Glauser is being let go in layoff today</a>
-            </div>
-            <div class="story-date">8 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/devedbookclub/devedbookclub-round-3-teaching-tech-together-4egm">#DevEdBookClub
-                    Round 3: Teaching Tech Together</a>
-            </div>
-            <div class="story-date">9 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/nimbusenv/how-to-improve-developer-experience-7-things-to-change-3c5e">How to
-                    Improve Developer Experience: 7 Things to Change</a>
-            </div>
-            <div class="story-date">9 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.animenewsnetwork.com&size=30">
-                <div class="story-url">www.animenewsnetwork.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.animenewsnetwork.com/interest/2022-06-09/shonen-jump-brings-back-annual-app-development-contest-after-3-years/.186438">Shonen
-                    Jump Brings Back Annual App Development Contest After 3 Years</a>
-            </div>
-            <div class="story-date">9 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.theregister.com&size=30">
-                <div class="story-url">www.theregister.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.theregister.com/2022/06/08/github_atom_dropped/">GitHub drops Atom:
-                    Open-source text editor mothballed by end of year</a>
-            </div>
-            <div class="story-date">9 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/devteam/getting-your-conference-talk-proposal-accepted-1cb6">Getting Your
-                    Conference Talk Proposal Accepted 🎙</a>
-            </div>
-            <div class="story-date">10 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dev.to/avelino/from-wanting-to-be-part-of-the-cto-phd">From wanting to
-                    be part of the CTO</a>
-            </div>
-            <div class="story-date">10 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoworld.com&size=30">
-                <div class="story-url">www.infoworld.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.infoworld.com/article/3662759/mongodb-grows-up.html">MongoDB grows
-                    up</a>
-            </div>
-            <div class="story-date">10 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.thecoinrepublic.com&size=30">
-                <div class="story-url">www.thecoinrepublic.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.thecoinrepublic.com/2022/06/08/xrp-price-analysis-xrp-is-trapped-in-a-sideways-trend-calling-for-a-breakout/">XRP
-                    Price Analysis: XRP is trapped in a sideways trend, calling for a breakout.</a>
-            </div>
-            <div class="story-date">10 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.onmsft.com&size=30">
-                <div class="story-url">www.onmsft.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.onmsft.com/news/cvp-for-developer-relations-jeff-sandquist-leaving-microsoft-again">CVP
-                    for Developer Relations Jeff Sandquist leaving Microsoft again</a>
-            </div>
-            <div class="story-date">11 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenextweb.com&size=30">
-                <div class="story-url">thenextweb.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://thenextweb.com/news/react-js-conference-return-in-november-lgbtq-not-invited">React
-                    JavaScript conference to return in November – LGBTQ not invited</a>
-            </div>
-            <div class="story-date">11 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:lucasfcosta.com&size=30">
-                <div class="story-url">lucasfcosta.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html">UX Patterns for
-                    CLI Tools</a>
-            </div>
-            <div class="story-date">11 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
-                <div class="story-url">twitter.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://twitter.com/ReactEurasia/status/1533728596426166272">Large React JS
-                    Conference moves to Dubai</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dev.to/jasonstcyr/becoming-a-leader-letting-it-go-27cc">Becoming a
-                    Leader – Letting it go</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.youtube.com&size=30">
-                <div class="story-url">www.youtube.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.youtube.com/watch?v=q5D55G7Ejs8">Apple WWDC 2022 keynote stream
-                    (YouTube)</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.investing.com&size=30">
-                <div class="story-url">www.investing.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.investing.com/news/cryptocurrency-news/xrp-price-matt-hamilton-accuses-watcher-guru-of-twisting-words-2833915">XRP
-                    Price: Matt Hamilton Accuses Watcher Guru of Twisting Words By CoinQuora</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.apple.com&size=30">
-                <div class="story-url">www.apple.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.apple.com/newsroom/2022/06/apple-announces-winners-of-the-2022-apple-design-awards/">Apple
-                    announces winners of the 2022 Apple Design Awards</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.computerweekly.com&size=30">
-                <div class="story-url">www.computerweekly.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.computerweekly.com/blog/CW-Developer-Network/What-to-expect-at-MongoDB-World-2022">What
-                    to expect at MongoDB World 2022</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.thecoinrepublic.com&size=30">
-                <div class="story-url">www.thecoinrepublic.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.thecoinrepublic.com/2022/06/06/former-ripple-proponen-matt-hamilton-thinks-xrp-will-mark-100-at-some-point/">Former
-                    Ripple Proponen Matt Hamilton Thinks XRP Will Mark $100 At Some Point</a>
-            </div>
-            <div class="story-date">12 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dev.to/banjtheman/how-i-became-a-developer-advocate-at-aws-5a01">How I
-                    became a Developer Advocate at AWS</a>
-            </div>
-            <div class="story-date">13 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://dev.to/linkbenjamin/the-adventures-of-blink-2-what-is-it-you-do-here-25e">The
-                    Adventures of Blink #2: What is it you DO here?</a>
-            </div>
-            <div class="story-date">13 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.omgubuntu.co.uk&size=30">
-                <div class="story-url">www.omgubuntu.co.uk</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.omgubuntu.co.uk/2022/05/ubuntu-22-10-new-text-editor">Ubuntu 22.10
-                    replaces Gedit with new text editor</a>
-            </div>
-            <div class="story-date">14 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:vscodium.com&size=30">
-                <div class="story-url">vscodium.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://vscodium.com/">VSCodium – Free/Libre Open Source Software Binaries of
-                    VS Code</a>
-            </div>
-            <div class="story-date">15 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/state-of-cloud-native-development-who-is-using-kubernetes">State
-                    of Cloud Native Development: Who is using Kubernetes?</a>
-            </div>
-            <div class="story-date">18 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/neurodiversity-is-your-my-and-our-unfair-advantage">Neurodiversity
-                    is your, my, and our unfair advantage</a>
-            </div>
-            <div class="story-date">19 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.youtube.com&size=30">
-                <div class="story-url">www.youtube.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.youtube.com/watch?v=8UNG3cQoOEc">Douglas Adams Keynote at Microsoft
-                    (1996)</a>
-            </div>
-            <div class="story-date">24 days ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:about.gitlab.com&size=30">
-                <div class="story-url">about.gitlab.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://about.gitlab.com/blog/2022/05/23/the-future-of-the-gitlab-web-ide/">The
-                    Future of the Gitlab Web IDE</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:hothardware.com&size=30">
-                <div class="story-url">hothardware.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://hothardware.com/news/amd-computex-taipei-2022-keynote">AMD Ryzen 7000
-                    Smokes Alder Lake at Computex Keynote as Zen 4 Excitement Builds</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:blog.jetbrains.com&size=30">
-                <div class="story-url">blog.jetbrains.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://blog.jetbrains.com/idea/2022/05/take-part-in-the-new-ui-preview-for-your-jetbrains-ide/">Take
-                    Part in the New UI Preview for Your JetBrains IDE</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:zork.net&size=30">
-                <div class="story-url">zork.net</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://zork.net/~st/jottings/kakoune-a-punk-rock-text-editor.html">Kakoune, a
-                    Punk Rock Text Editor</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/hot-off-the-press-developer-personalities-low-code-and-no-code-tools-languages-and-more">Hot
-                    off the Press: Developer personalities, Low-code and No-code tools, Languages and more </a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.devrelx.com/post/part-2-content-for-developers-what-and-how">Part
-                    2. Content for Developers: What and How</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http:lab6.com&size=30">
-                <div class="story-url">lab6.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="http://lab6.com/1">A PDF zine readable in any plain text editor, and it's also
-                    an MP3 [pdf]</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:christine.website&size=30">
-                <div class="story-url">christine.website</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://christine.website/blog/heroku-devex-2022-05-12">I Miss Heroku's
-                    DevEx</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:dl.acm.org&size=30">
-                <div class="story-url">dl.acm.org</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dl.acm.org/doi/pdf/10.1145/4284.4288">Concepts of the Text Editor Lara
-                    (1985)</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.devrelx.com/post/devrel-in-web3-with-rex-st-john">DevRel in Web3
-                    with Rex St John</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://www.devrelx.com/post/content-for-developers-what-and-how">Part 1.
-                    Content for Developers: What and How</a>
-            </div>
-            <div class="story-date">a month ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
-                <div class="story-url">github.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://github.com/fonoster/fonoster">Fonoster: The open-source alternative to
-                    Twilio</a>
-            </div>
-            <div class="story-date">2 months ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/developer-marketing-strategy-with-gary-gonzales-moschoula-kramvousanou">Developer
-                    Marketing Strategy with Gary Gonzalez & Moschoula Kramvousanou</a>
-            </div>
-            <div class="story-date">2 months ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/building-devrel-strategy-with-sean-falconer">Building DevRel
-                    Strategy with Sean Falconer</a>
-            </div>
-            <div class="story-date">2 months ago</div>
-
         </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
-                <div class="story-url">www.devrelx.com</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank"
-                    href="https://www.devrelx.com/post/devrel-is-a-cost-center-yet-essential-with-michael-heap">DevRel
-                    is a cost center, yet essential with Michael Heap</a>
-            </div>
-            <div class="story-date">3 months ago</div>
-
-        </div>
-        <div class="story">
-            <div class="story-meta">
-                <img onerror="this.style.display='none'" class="story-image"
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-                <div class="story-url">dev.to</div>
-            </div>
-            <div class="story-header">
-                <a target="_blank" href="https://dev.to/adityaoberai/from-student-to-devrel-a-memoir-43pf">From Student
-                    👨‍🎓 To DevRel 🥑: A Memoir 📃</a>
+        <div class="hero-story-footer">
+            <div class="hero-story-author">
+                <img class="hero-story-authot-image" src="https://miro.medium.com/fit/c/96/96/0*-JX3HagHYWFY-LiS.jpeg" />
             </div>
-            <div class="story-date">4 months ago</div>
 
+            <div class="hero-story-author">Fabian Pfortmüller</div>
         </div>
     </div>
-</body>
+    <div class="hero-story">
+        <div class="hero-story-body">
+            <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=156">
+            <div class="hero-story-header hero-story-header-large">
+                <a target="_blank"
+                    href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">Community
+                    leadership: how can I uplift the voices of members while still
+                    expressing my own vision?</a>
+            </div>
+        </div>
+        <div class="hero-story-footer">
+            <div class="hero-story-author">
+                <img class="hero-story-authot-image" src="https://pbs.twimg.com/profile_images/978877201780178944/yP_1IiYQ_400x400.jpg" />
+            </div>
 
-</html>
+            <div class="hero-story-author">Carly Richmond</div>
+        </div>
+    </div>
+
+</div>
+    
+            <div class="section-header">LATEST</div>
+            <div class="stories-container">
+             <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:gamefreaks365.com&size=30">
+        <div class="story-url">gamefreaks365.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://gamefreaks365.com/hidden-hunter-launches-in-roblox/">Hidden Hunter launches in Roblox</a>
+    </div>
+    <div class="story-date">12 hours ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.ghacks.net&size=30">
+        <div class="story-url">www.ghacks.net</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.ghacks.net/2022/06/17/microsoft-store-no-astronomical-pricing-and-paid-open-source-or-free-copycat-applications-anymore/">Microsoft finally updates store rules to ban paid copycat open source projects</a>
+    </div>
+    <div class="story-date">21 hours ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:fleetdm.com&size=30">
+        <div class="story-url">fleetdm.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://fleetdm.com/securing/lossless-yubikeys-with-yubitrak-and-airtag">Keep track of your Yubikeys with this open source 3D model and AirTag</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.i-programmer.info&size=30">
+        <div class="story-url">www.i-programmer.info</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.i-programmer.info/news/112-theory/15512-new-record-from-google-100-trillionth-digit-of-pi.html">New Record From Google</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:seraf.dev&size=30">
+        <div class="story-url">seraf.dev</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://seraf.dev/how-magit-improved-my-workflow-and-my-git-knowledge-c6ccca991e19?gi=857e387761f5">Magit improved my workflow and my Git knowledge</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.citusdata.com&size=30">
+        <div class="story-url">www.citusdata.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.citusdata.com/blog/2022/06/17/citus-11-goes-fully-open-source/">Citus 11 for Postgres goes fully open source, with query from any node</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:ploopy.co&size=30">
+        <div class="story-url">ploopy.co</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://ploopy.co/thumb-trackball/">Ploopy open source thumb trackball</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/citusdata/citus/pull/6008">Citus enterprise features are open source now</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:freakingrectangle.com&size=30">
+        <div class="story-url">freakingrectangle.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://freakingrectangle.com/2022/04/15/how-to-freaking-hire-great-developers/">How to Freaking Find Great Developers by Having Them Read Code</a>
+    </div>
+    <div class="story-date">a day ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.idropnews.com&size=30">
+        <div class="story-url">www.idropnews.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.idropnews.com/news/3-reasons-to-install-the-developer-betas-and-5-reasons-why-you-shouldnt/189117/">3 Reasons to Install the Developer Betas (And 5 Reasons Why You Shouldn't)</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:pvs-studio.com&size=30">
+        <div class="story-url">pvs-studio.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://pvs-studio.com/en/blog/posts/0951/">Embedded system developers do not know how to program</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/citusdata/citus/commit/184c7c0bce6b7bca61d25b828855fac5fba64816">Make enterprise features open source</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:gist.github.com&size=30">
+        <div class="story-url">gist.github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://gist.github.com/slimsag/c01bb6508e3dfa744bf3bdafa0cfe07f">Microsoft: We heart open source developers ... not?</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:nextdns.github.io&size=30">
+        <div class="story-url">nextdns.github.io</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://nextdns.github.io/api/">NextDNS API</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoworld.com&size=30">
+        <div class="story-url">www.infoworld.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.infoworld.com/article/3663677/oktas-matt-raible-how-i-became-a-java-hipster.html">Okta’s Matt Raible: How I became a Java hipster</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.coinspeaker.com&size=30">
+        <div class="story-url">www.coinspeaker.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.coinspeaker.com/bewater-devcon-gathers-developers-from-east-to-west/">BeWater DevCon Gathers Developers from East to West to Bootstrap Blockchain Development Notions</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:canvatechblog.com&size=30">
+        <div class="story-url">canvatechblog.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://canvatechblog.com/we-put-half-a-million-files-in-one-git-repository-heres-what-we-learned-ec734a764181">We Put Half a Million Files in One Git Repository, Here’s What We Learned</a>
+    </div>
+    <div class="story-date">2 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/omnisharp/omnisharp-vscode/issues/5276">Microsoft discloses plans to turn parts of VS Code C# extension to closed source</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/OmniSharp/omnisharp-vscode/issues/5276">A roadmap update on the VS Code C# extension</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:visualstudiomagazine.com&size=30">
+        <div class="story-url">visualstudiomagazine.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://visualstudiomagazine.com/articles/2022/06/15/vsm-arm-vs.aspx">Visual Studio 2022 17.3 Preview 2 Is First Native Arm64 Release</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.linuxjournal.com&size=30">
+        <div class="story-url">www.linuxjournal.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.linuxjournal.com/content/git-origin-story">A Git Origin Story (2018)</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenewstack.io&size=30">
+        <div class="story-url">thenewstack.io</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://thenewstack.io/cloud-native-day-2-operations-why-this-begins-on-day-0/">Cloud Native Day 2 Operations: Why This Begins on Day 0</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/devrel-how-technical-communities-can-maximize-impact-success-the-2022-community-led-summit">DevRel: How Technical Communities Can Maximize Impact & Success</a>
+    </div>
+    <div class="story-date">3 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/linkbenjamin/the-adventures-of-blink-4-i-win-when-you-win-35ao">The Adventures of Blink #4: I Win When You Win</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:dvc.org&size=30">
+        <div class="story-url">dvc.org</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dvc.org/blog/DVC-VS-Code-extension">VS Code extension that manages Machine Learning experiments</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:documentation.divio.com&size=30">
+        <div class="story-url">documentation.divio.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://documentation.divio.com">The Documentation System</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/codingwithryan/7-marketing-strategies-for-your-software-development-content-1lf4">7 Marketing Strategies for Your Software Development Content</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:reproof.app&size=30">
+        <div class="story-url">reproof.app</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://reproof.app/blog/document-first-then-build">Write documentation first, then build</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/ceceliacreates/tailoring-tech-content-for-different-audiences-15nk">Tailoring tech content for different audiences</a>
+    </div>
+    <div class="story-date">4 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:corsix.github.io&size=30">
+        <div class="story-url">corsix.github.io</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://corsix.github.io/dynasm-doc/index.html">The Unofficial DynASM Documentation</a>
+    </div>
+    <div class="story-date">5 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:securityboulevard.com&size=30">
+        <div class="story-url">securityboulevard.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://securityboulevard.com/2022/06/wicked-good-development-dev-nexus-reflections-and-conversations-part-3/">Wicked Good Development: Dev Nexus Reflections and Conversations Part 3</a>
+    </div>
+    <div class="story-date">5 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.vg247.com&size=30">
+        <div class="story-url">www.vg247.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.vg247.com/a44-kepler-interactive-unique-co-op-publishing-model">A44 on the strength of game publishing co-op, Kepler Interactive: “If Kepler does better, we all do better”</a>
+    </div>
+    <div class="story-date">5 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenewstack.io&size=30">
+        <div class="story-url">thenewstack.io</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://thenewstack.io/apache-cassandra-4-1-building-the-database-your-kids-will-use/">Apache Cassandra 4.1: Building the Database Your Kids Will Use</a>
+    </div>
+    <div class="story-date">5 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:news.itsfoss.com&size=30">
+        <div class="story-url">news.itsfoss.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://news.itsfoss.com/atom-being-discontinued/">To Favor Microsoft VS Code, Microsoft's GitHub Is Killing GitHub's Atom Editor</a>
+    </div>
+    <div class="story-date">6 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.coindesk.com&size=30">
+        <div class="story-url">www.coindesk.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.coindesk.com/business/2022/06/12/texas-feels-like-bitcoin-country-probably-because-i-was-there-for-a-bitcoin-conference/">Texas Feels Like Bitcoin Country (Maybe Because I Was There for a Bitcoin Conference)</a>
+    </div>
+    <div class="story-date">6 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:seirdy.one&size=30">
+        <div class="story-url">seirdy.one</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://seirdy.one/posts/2022/06/10/cli-best-practices/">Best Practices for Inclusive CLIs</a>
+    </div>
+    <div class="story-date">7 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:computerhistory.org&size=30">
+        <div class="story-url">computerhistory.org</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://computerhistory.org/blog/computings-woodstock/">Computing’s Woodstock: videos of the 1976 Los Alamos conference</a>
+    </div>
+    <div class="story-date">7 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:ruky.me&size=30">
+        <div class="story-url">ruky.me</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://ruky.me/2022/06/11/im-switching-form-vs-code-to-vs-codium/">I'm Switching Form VS Code to vs Codium</a>
+    </div>
+    <div class="story-date">7 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/FiloSottile/age/releases/tag/v1.1.0-rc.1">age v1.1.0-rc.1: plugin and YubiKeys support</a>
+    </div>
+    <div class="story-date">7 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoq.com&size=30">
+        <div class="story-url">www.infoq.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.infoq.com/presentations/java17-path-features-transition/">Java 17: the Path, Features, Tips and Tricks Panel</a>
+    </div>
+    <div class="story-date">8 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
+        <div class="story-url">twitter.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://twitter.com/michelleglauser/status/1535296775451713536">Twilio's Developer Evangelist Michelle Glauser is being let go in layoff today</a>
+    </div>
+    <div class="story-date">8 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/devedbookclub/devedbookclub-round-3-teaching-tech-together-4egm">#DevEdBookClub Round 3: Teaching Tech Together</a>
+    </div>
+    <div class="story-date">9 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/nimbusenv/how-to-improve-developer-experience-7-things-to-change-3c5e">How to Improve Developer Experience: 7 Things to Change</a>
+    </div>
+    <div class="story-date">9 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.animenewsnetwork.com&size=30">
+        <div class="story-url">www.animenewsnetwork.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.animenewsnetwork.com/interest/2022-06-09/shonen-jump-brings-back-annual-app-development-contest-after-3-years/.186438">Shonen Jump Brings Back Annual App Development Contest After 3 Years</a>
+    </div>
+    <div class="story-date">9 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenewstack.io&size=30">
+        <div class="story-url">thenewstack.io</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://thenewstack.io/reducing-security-vulnerabilities-in-kubernetes/">Reducing Security Vulnerabilities in Kubernetes – The New Stack</a>
+    </div>
+    <div class="story-date">9 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.theregister.com&size=30">
+        <div class="story-url">www.theregister.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.theregister.com/2022/06/08/github_atom_dropped/">GitHub drops Atom: Open-source text editor mothballed by end of year</a>
+    </div>
+    <div class="story-date">9 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/devteam/getting-your-conference-talk-proposal-accepted-1cb6">Getting Your Conference Talk Proposal Accepted 🎙</a>
+    </div>
+    <div class="story-date">10 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/avelino/from-wanting-to-be-part-of-the-cto-phd">From wanting to be part of the CTO</a>
+    </div>
+    <div class="story-date">10 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.infoworld.com&size=30">
+        <div class="story-url">www.infoworld.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.infoworld.com/article/3662759/mongodb-grows-up.html">MongoDB grows up</a>
+    </div>
+    <div class="story-date">10 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.thecoinrepublic.com&size=30">
+        <div class="story-url">www.thecoinrepublic.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.thecoinrepublic.com/2022/06/08/xrp-price-analysis-xrp-is-trapped-in-a-sideways-trend-calling-for-a-breakout/">XRP Price Analysis: XRP is trapped in a sideways trend, calling for a breakout.</a>
+    </div>
+    <div class="story-date">10 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.onmsft.com&size=30">
+        <div class="story-url">www.onmsft.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.onmsft.com/news/cvp-for-developer-relations-jeff-sandquist-leaving-microsoft-again">CVP for Developer Relations Jeff Sandquist leaving Microsoft again</a>
+    </div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:thenextweb.com&size=30">
+        <div class="story-url">thenextweb.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://thenextweb.com/news/react-js-conference-return-in-november-lgbtq-not-invited">React JavaScript conference to return in November – LGBTQ not invited</a>
+    </div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:lucasfcosta.com&size=30">
+        <div class="story-url">lucasfcosta.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://lucasfcosta.com/2022/06/01/ux-patterns-cli-tools.html">UX Patterns for CLI Tools</a>
+    </div>
+    <div class="story-date">11 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:twitter.com&size=30">
+        <div class="story-url">twitter.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://twitter.com/ReactEurasia/status/1533728596426166272">Large React JS Conference moves to Dubai</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/jasonstcyr/becoming-a-leader-letting-it-go-27cc">Becoming a Leader – Letting it go</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.youtube.com&size=30">
+        <div class="story-url">www.youtube.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.youtube.com/watch?v=q5D55G7Ejs8">Apple WWDC 2022 keynote stream (YouTube)</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:z.digitalclouds.dev&size=30">
+        <div class="story-url">z.digitalclouds.dev</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://z.digitalclouds.dev/community/zsh_plugin_standard/">ZSH Plugin Standard</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.investing.com&size=30">
+        <div class="story-url">www.investing.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.investing.com/news/cryptocurrency-news/xrp-price-matt-hamilton-accuses-watcher-guru-of-twisting-words-2833915">XRP Price: Matt Hamilton Accuses Watcher Guru of Twisting Words By CoinQuora</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.apple.com&size=30">
+        <div class="story-url">www.apple.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.apple.com/newsroom/2022/06/apple-announces-winners-of-the-2022-apple-design-awards/">Apple announces winners of the 2022 Apple Design Awards</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.computerweekly.com&size=30">
+        <div class="story-url">www.computerweekly.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.computerweekly.com/blog/CW-Developer-Network/What-to-expect-at-MongoDB-World-2022">What to expect at MongoDB World 2022</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.thecoinrepublic.com&size=30">
+        <div class="story-url">www.thecoinrepublic.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.thecoinrepublic.com/2022/06/06/former-ripple-proponen-matt-hamilton-thinks-xrp-will-mark-100-at-some-point/">Former Ripple Proponen Matt Hamilton Thinks XRP Will Mark $100 At Some Point</a>
+    </div>
+    <div class="story-date">12 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/banjtheman/how-i-became-a-developer-advocate-at-aws-5a01">How I became a Developer Advocate at AWS</a>
+    </div>
+    <div class="story-date">13 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/linkbenjamin/the-adventures-of-blink-2-what-is-it-you-do-here-25e">The Adventures of Blink #2: What is it you DO here?</a>
+    </div>
+    <div class="story-date">13 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.omgubuntu.co.uk&size=30">
+        <div class="story-url">www.omgubuntu.co.uk</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.omgubuntu.co.uk/2022/05/ubuntu-22-10-new-text-editor">Ubuntu 22.10 replaces Gedit with new text editor</a>
+    </div>
+    <div class="story-date">14 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:vscodium.com&size=30">
+        <div class="story-url">vscodium.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://vscodium.com/">VSCodium – Free/Libre Open Source Software Binaries of VS Code</a>
+    </div>
+    <div class="story-date">15 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/state-of-cloud-native-development-who-is-using-kubernetes">State of Cloud Native Development: Who is using Kubernetes?</a>
+    </div>
+    <div class="story-date">18 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/neurodiversity-is-your-my-and-our-unfair-advantage">Neurodiversity is your, my, and our unfair advantage</a>
+    </div>
+    <div class="story-date">19 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.youtube.com&size=30">
+        <div class="story-url">www.youtube.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.youtube.com/watch?v=8UNG3cQoOEc">Douglas Adams Keynote at Microsoft (1996)</a>
+    </div>
+    <div class="story-date">24 days ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:about.gitlab.com&size=30">
+        <div class="story-url">about.gitlab.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://about.gitlab.com/blog/2022/05/23/the-future-of-the-gitlab-web-ide/">The Future of the Gitlab Web IDE</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:hothardware.com&size=30">
+        <div class="story-url">hothardware.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://hothardware.com/news/amd-computex-taipei-2022-keynote">AMD Ryzen 7000 Smokes Alder Lake at Computex Keynote as Zen 4 Excitement Builds</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:blog.jetbrains.com&size=30">
+        <div class="story-url">blog.jetbrains.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://blog.jetbrains.com/idea/2022/05/take-part-in-the-new-ui-preview-for-your-jetbrains-ide/">Take Part in the New UI Preview for Your JetBrains IDE</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:zork.net&size=30">
+        <div class="story-url">zork.net</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://zork.net/~st/jottings/kakoune-a-punk-rock-text-editor.html">Kakoune, a Punk Rock Text Editor</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/hot-off-the-press-developer-personalities-low-code-and-no-code-tools-languages-and-more">Hot off the Press: Developer personalities, Low-code and No-code tools, Languages and more </a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/part-2-content-for-developers-what-and-how">Part 2. Content for Developers: What and How</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http:lab6.com&size=30">
+        <div class="story-url">lab6.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="http://lab6.com/1">A PDF zine readable in any plain text editor, and it's also an MP3 [pdf]</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:christine.website&size=30">
+        <div class="story-url">christine.website</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://christine.website/blog/heroku-devex-2022-05-12">I Miss Heroku's DevEx</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:dl.acm.org&size=30">
+        <div class="story-url">dl.acm.org</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dl.acm.org/doi/pdf/10.1145/4284.4288">Concepts of the Text Editor Lara (1985)</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/devrel-in-web3-with-rex-st-john">DevRel in Web3 with Rex St John</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/content-for-developers-what-and-how">Part 1. Content for Developers: What and How</a>
+    </div>
+    <div class="story-date">a month ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:github.com&size=30">
+        <div class="story-url">github.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://github.com/fonoster/fonoster">Fonoster: The open-source alternative to Twilio</a>
+    </div>
+    <div class="story-date">2 months ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/developer-marketing-strategy-with-gary-gonzales-moschoula-kramvousanou">Developer Marketing Strategy with Gary Gonzalez & Moschoula Kramvousanou</a>
+    </div>
+    <div class="story-date">2 months ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/building-devrel-strategy-with-sean-falconer">Building DevRel Strategy with Sean Falconer</a>
+    </div>
+    <div class="story-date">2 months ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.devrelx.com&size=30">
+        <div class="story-url">www.devrelx.com</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://www.devrelx.com/post/devrel-is-a-cost-center-yet-essential-with-michael-heap">DevRel is a cost center, yet essential with Michael Heap</a>
+    </div>
+    <div class="story-date">3 months ago</div>
+
+</div> <div class="story">
+    <div class="story-meta">
+        <img onerror="this.style.display='none'" class="story-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+        <div class="story-url">dev.to</div>
+    </div>
+    <div class="story-header">
+        <a target="_blank" href="https://dev.to/adityaoberai/from-student-to-devrel-a-memoir-43pf">From Student 👨‍🎓 To DevRel 🥑: A Memoir 📃</a>
+    </div>
+    <div class="story-date">4 months ago</div>
+
+</div>
+        </div>
+        </body>
+    </html>
+    
