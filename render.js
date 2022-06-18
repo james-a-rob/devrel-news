@@ -159,13 +159,13 @@ const css = () => {
         }
     
         .hero-story-header {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             padding: 20px;
         }
 
         .hero-story-header-large {
-            font-size: 36px;
+            font-size: 32px;
         }
     
         .hero-story {
@@ -178,6 +178,18 @@ const css = () => {
         .hero-story-image {
             width: 100%;
     
+        }
+
+        .hero-story-footer{
+            display:flex;
+            padding: 0 20 20 20;
+            align-items:center;
+        }
+
+        .hero-story-authot-image{
+            border-radius:50%;
+            width:30px;
+            margin-right:4px;
         }
 
         .section-header{
@@ -289,20 +301,42 @@ const heroStories = () => {
     return `
     <div class="hero-stories-container">
     <div class="hero-story">
-        <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
-        <div class="hero-story-header hero-story-header-large">
-        <a target="_blank" href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community leadership: how can I uplift the voices of members while still
-            expressing my own vision?</a>
+    <div class="hero-story-body">
+            <img class="hero-story-image" src="https://miro.medium.com/max/1400/1*1csShiGD38bq3qfRjhx99Q.jpeg">
+            <div class="hero-story-header hero-story-header-large">
+                <a target="_blank"
+                    href="https://medium.com/together-institute/whats-the-role-of-my-own-motivations-opinions-as-community-leader-622f78fd2a17">Community
+                    leadership: how can I uplift the voices of members while still
+                    expressing my own vision?</a>
             </div>
+        </div>
+        <div class="hero-story-footer">
+            <div class="hero-story-author">
+                <img class="hero-story-authot-image" src="https://miro.medium.com/fit/c/96/96/0*-JX3HagHYWFY-LiS.jpeg" />
+            </div>
+
+            <div class="hero-story-author">Fabian Pfortmüller</div>
+        </div>
     </div>
     <div class="hero-story">
-        <img class="hero-story-image"
-            src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=1568">
-        <div class="hero-story-header">
-        <a target="_blank" href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">The Differences Between Conference Attendance Experience as an Advocate
-            versus Speaker and Attendee</a>
+        <div class="hero-story-body">
+            <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=156">
+            <div class="hero-story-header hero-story-header-large">
+                <a target="_blank"
+                    href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">Community
+                    leadership: how can I uplift the voices of members while still
+                    expressing my own vision?</a>
             </div>
+        </div>
+        <div class="hero-story-footer">
+            <div class="hero-story-author">
+                <img class="hero-story-authot-image" src="https://pbs.twimg.com/profile_images/978877201780178944/yP_1IiYQ_400x400.jpg" />
+            </div>
+
+            <div class="hero-story-author">Carly Richmond</div>
+        </div>
     </div>
+
 </div>
     `;
 };
