@@ -294,7 +294,6 @@ const css = () => {
     `;
 };
 const story = (storyData) => {
-    console.log(storyData);
     let domain = (new URL(storyData.url));
     return ` <div class="story">
     <div class="story-meta">
@@ -334,9 +333,9 @@ const heroStories = () => {
             <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg">
             <div class="hero-story-header hero-story-header-large">
                 <a target="_blank"
-                    href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">Community
-                    leadership: how can I uplift the voices of members while still
-                    expressing my own vision?</a>
+                    href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">
+                    The Differences Between Conference Attendance Experience as an Advocate versus Speaker and Attendee
+                    </a>
             </div>
         </div>
         <div class="hero-story-footer">
