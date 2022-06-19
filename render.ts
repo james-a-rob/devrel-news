@@ -330,7 +330,7 @@ const heroStories = () => {
     <div class="hero-story">
         <div class="hero-story-body">
             <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg">
-            <div class="hero-story-header hero-story-header-large">
+            <div class="hero-story-header">
                 <a target="_blank"
                     href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">
                     The Differences Between Conference Attendance Experience as an Advocate versus Speaker and Attendee
