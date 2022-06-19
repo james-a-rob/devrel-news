@@ -6,6 +6,7 @@ import {
     scrapeLatestDevrelxStories,
     scrapeLatestGoogleNewsStories,
     scrapeLatestWeeklyEventStories,
+    scrapeLatestDxTipsStories,
     sortStoriesByDate,
     removeDuplicateStories
 } from './app';
@@ -345,8 +346,10 @@ const render = async () => {
     const latestDevrelxStories = await scrapeLatestDevrelxStories();
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
     const latestWeeklyEventStories = await scrapeLatestWeeklyEventStories();
+    const latestDxTipsStories = await scrapeLatestDxTipsStories();
+
     const filteredGoogleNewsStories = mlFilter(latestGoogleNewsStories);
-    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories, ...latestWeeklyEventStories]));
+    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories, ...latestWeeklyEventStories, ...latestDxTipsStories]));
 
 
     const html = `

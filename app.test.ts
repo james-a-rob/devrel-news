@@ -6,6 +6,7 @@ import {
     scrapeLatestGoogleNewsStories,
     scrapeLatestDevrelxStories,
     scrapeLatestWeeklyEventStories,
+    scrapeLatestDxTipsStories,
     hnFilter,
     sortStoriesByDate,
     removeDuplicateStories,
@@ -15,7 +16,7 @@ import {
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('wild');
+nockBack.setMode('record');
 
 jest.setTimeout(6000000);
 
@@ -52,11 +53,23 @@ describe('dev.to', () => {
 });
 
 describe('weekly events', () => {
-    test.only('scrape stories', async () => {
+    test('scrape stories', async () => {
         const { nockDone } = await nockBack('weekly-events-response.json')
 
         const latestStories = await scrapeLatestWeeklyEventStories();
         expect(latestStories[0].title).toEqual(" July 12 - CZSK CMX Chapter Launch in Bratislava! | Calling on all Community Managers! ");
+
+        console.log(latestStories);
+        nockDone();
+    });
+});
+
+describe('dx tips', () => {
+    test.only('scrape stories', async () => {
+        const { nockDone } = await nockBack('dx-tips-response.json')
+
+        const latestStories = await scrapeLatestDxTipsStories();
+        expect(latestStories[0].title).toEqual("Resource: The Best DevTools Pitches of All Time");
 
         console.log(latestStories);
         nockDone();
