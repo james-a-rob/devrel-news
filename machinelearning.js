@@ -51,11 +51,12 @@ console.log(classifier.classify('we would like to propose our offer')); // spam
 const mlFilter = (stories) => {
     return stories.filter((story) => {
         const classifications = classifier.getClassifications(story.title);
-        console.log(classifications);
         const valDifference = (classifications[0].value - classifications[1].value);
-        console.log(valDifference);
-        const articleOfInterest = valDifference > 0.004;
-        if (articleOfInterest) {
+        const articleOfInterest = valDifference > 0.00004;
+        console.log("- - ", story.title);
+        console.log(articleOfInterest);
+        console.log(classifier.classify(story.title));
+        if (articleOfInterest && classifier.classify(story.title) === 'devrel') {
             return true;
         }
         else {
