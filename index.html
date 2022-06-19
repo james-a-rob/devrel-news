@@ -139,7 +139,9 @@
             border-radius: 4px;
             margin: 4px;
             background: white;
-    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     
         .hero-story-image {
@@ -179,6 +181,15 @@
 
             .hero-story-header-large {
                 font-size: 30px;
+            }
+        }
+
+        @media (max-width: 850px) {
+
+
+            .stories-container {
+                grid-template-columns: repeat(2, 1fr);
+
             }
         }
 
@@ -912,16 +923,6 @@
     </div>
     <div class="story-header">
         <a target="_blank" href="https://www.onmsft.com/news/cvp-for-developer-relations-jeff-sandquist-leaving-microsoft-again">CVP for Developer Relations Jeff Sandquist leaving Microsoft again</a>
-    </div>
-    <div class="story-date">12 days ago</div>
-
-</div> <div class="story">
-    <div class="story-meta">
-        <img onerror="this.style.display='none'" class="story-image" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https:www.thurrott.com&size=30">
-        <div class="story-url">www.thurrott.com</div>
-    </div>
-    <div class="story-header">
-        <a target="_blank" href="https://www.thurrott.com/apple/268133/apis-apis-apis">APIs! APIs! APIs!</a>
     </div>
     <div class="story-date">12 days ago</div>
 

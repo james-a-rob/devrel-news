@@ -169,7 +169,9 @@ const css = () => {
             border-radius: 4px;
             margin: 4px;
             background: white;
-    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     
         .hero-story-image {
@@ -209,6 +211,15 @@ const css = () => {
 
             .hero-story-header-large {
                 font-size: 30px;
+            }
+        }
+
+        @media (max-width: 850px) {
+
+
+            .stories-container {
+                grid-template-columns: repeat(2, 1fr);
+
             }
         }
 
