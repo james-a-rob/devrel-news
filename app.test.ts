@@ -1,6 +1,16 @@
 import { jest, describe, expect, test } from '@jest/globals';
 import nock from 'nock';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestGoogleNewsStories, scrapeLatestDevrelxStories, hnFilter, sortStoriesByDate, removeDuplicateStories, urlToImage } from './app';
+import {
+    scrapeLatestHnStories,
+    scrapeLatestDevToStories,
+    scrapeLatestGoogleNewsStories,
+    scrapeLatestDevrelxStories,
+    scrapeLatestWeeklyEventStories,
+    hnFilter,
+    sortStoriesByDate,
+    removeDuplicateStories,
+    urlToImage
+} from './app';
 
 
 const nockBack = nock.back;
@@ -30,7 +40,7 @@ describe('devrelx', () => {
 });
 
 describe('dev.to', () => {
-    test.only('scrape stories', async () => {
+    test('scrape stories', async () => {
         const { nockDone } = await nockBack('devto-response.json')
 
         const latestStories = await scrapeLatestDevToStories();
@@ -38,10 +48,19 @@ describe('dev.to', () => {
 
         console.log(latestStories);
         nockDone();
-
-
     });
+});
 
+describe('weekly events', () => {
+    test.only('scrape stories', async () => {
+        const { nockDone } = await nockBack('weekly-events-response.json')
+
+        const latestStories = await scrapeLatestWeeklyEventStories();
+        expect(latestStories[0].title).toEqual(" July 12 - CZSK CMX Chapter Launch in Bratislava! | Calling on all Community Managers! ");
+
+        console.log(latestStories);
+        nockDone();
+    });
 });
 
 describe('google news', () => {

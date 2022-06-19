@@ -1,6 +1,14 @@
 import fs from 'fs';
 import moment from 'moment';
-import { scrapeLatestHnStories, scrapeLatestDevToStories, scrapeLatestDevrelxStories, scrapeLatestGoogleNewsStories, sortStoriesByDate, removeDuplicateStories } from './app';
+import {
+    scrapeLatestHnStories,
+    scrapeLatestDevToStories,
+    scrapeLatestDevrelxStories,
+    scrapeLatestGoogleNewsStories,
+    scrapeLatestWeeklyEventStories,
+    sortStoriesByDate,
+    removeDuplicateStories
+} from './app';
 import { mlFilter } from './machinelearning';
 const head = () => {
     return `
@@ -336,9 +344,9 @@ const render = async () => {
     const latestDevToStories = await scrapeLatestDevToStories();
     const latestDevrelxStories = await scrapeLatestDevrelxStories();
     const latestGoogleNewsStories = await scrapeLatestGoogleNewsStories();
-    console.log(latestHnStories);
+    const latestWeeklyEventStories = await scrapeLatestWeeklyEventStories();
     const filteredGoogleNewsStories = mlFilter(latestGoogleNewsStories);
-    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories]));
+    const storiesData = sortStoriesByDate(removeDuplicateStories([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories, ...latestWeeklyEventStories]));
 
 
     const html = `

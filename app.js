@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.urlToImage = exports.removeDuplicateStories = exports.sortStoriesByDate = exports.scrapeLatestGoogleNewsStories = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
+exports.urlToImage = exports.removeDuplicateStories = exports.sortStoriesByDate = exports.scrapeLatestWeeklyEventStories = exports.scrapeLatestGoogleNewsStories = exports.scrapeLatestDevrelxStories = exports.scrapeLatestDevToStories = exports.scrapeLatestHnStories = exports.hnFilter = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fast_xml_parser_1 = require("fast-xml-parser");
 const hnFilter = (stories, searchTerm) => {
@@ -118,6 +118,14 @@ const scrapeLatestGoogleNewsStories = () => __awaiter(void 0, void 0, void 0, fu
     return Promise.all(googleNewsResponses.flat().map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title.split(' - ')[0], url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
 });
 exports.scrapeLatestGoogleNewsStories = scrapeLatestGoogleNewsStories;
+const scrapeLatestWeeklyEventStories = () => __awaiter(void 0, void 0, void 0, function* () {
+    let weeklyEventResponse = yield axios_1.default.get("https://bg.raindrop.io/rss/public/10525978");
+    const parser = new fast_xml_parser_1.XMLParser();
+    console.log(weeklyEventResponse.data);
+    let weeklyEventStories = parser.parse(weeklyEventResponse.data).rss.channel.item.slice(0, 10);
+    return Promise.all(weeklyEventStories.map((story) => __awaiter(void 0, void 0, void 0, function* () { return ({ title: story.title, url: story.link, created_at: story.pubDate, image: yield (0, exports.urlToImage)(story.link) }); })));
+});
+exports.scrapeLatestWeeklyEventStories = scrapeLatestWeeklyEventStories;
 const sortStoriesByDate = (stories) => {
     return stories.sort(function (a, b) {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();

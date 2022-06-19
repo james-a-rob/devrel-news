@@ -38,10 +38,19 @@ globals_1.jest.setTimeout(6000000);
     }));
 });
 (0, globals_1.describe)('dev.to', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('devto-response.json');
         const latestStories = yield (0, app_1.scrapeLatestDevToStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual("Getting Your Conference Talk Proposal Accepted 🎙");
+        console.log(latestStories);
+        nockDone();
+    }));
+});
+(0, globals_1.describe)('weekly events', () => {
+    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+        const { nockDone } = yield nockBack('weekly-events-response.json');
+        const latestStories = yield (0, app_1.scrapeLatestWeeklyEventStories)();
+        (0, globals_1.expect)(latestStories[0].title).toEqual(" July 12 - CZSK CMX Chapter Launch in Bratislava! | Calling on all Community Managers! ");
         console.log(latestStories);
         nockDone();
     }));

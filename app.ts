@@ -28,6 +28,12 @@ interface DevrelxStory {
     pubDate: string
 }
 
+interface WeeklyEventStory {
+    title: string
+    link: string
+    pubDate: string
+}
+
 interface GoogleNewsStory {
     title: string
     link: string
@@ -138,6 +144,14 @@ export const scrapeLatestGoogleNewsStories = async (): Promise<Story[]> => {
 
     return Promise.all(googleNewsResponses.flat().map(async (story: GoogleNewsStory) => ({ title: story.title.split(' - ')[0], url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
 
+}
+
+export const scrapeLatestWeeklyEventStories = async (): Promise<Story[]> => {
+    let weeklyEventResponse = await axios.get("https://bg.raindrop.io/rss/public/10525978");
+    const parser = new XMLParser();
+    console.log(weeklyEventResponse.data);
+    let weeklyEventStories = parser.parse(weeklyEventResponse.data).rss.channel.item.slice(0, 10);
+    return Promise.all(weeklyEventStories.map(async (story: WeeklyEventStory) => ({ title: story.title, url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
 }
 
 export const sortStoriesByDate = (stories: Story[]): Story[] => {

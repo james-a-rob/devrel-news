@@ -345,9 +345,9 @@ const render = () => __awaiter(void 0, void 0, void 0, function* () {
     const latestDevToStories = yield (0, app_1.scrapeLatestDevToStories)();
     const latestDevrelxStories = yield (0, app_1.scrapeLatestDevrelxStories)();
     const latestGoogleNewsStories = yield (0, app_1.scrapeLatestGoogleNewsStories)();
-    console.log(latestHnStories);
+    const latestWeeklyEventStories = yield (0, app_1.scrapeLatestWeeklyEventStories)();
     const filteredGoogleNewsStories = (0, machinelearning_1.mlFilter)(latestGoogleNewsStories);
-    const storiesData = (0, app_1.sortStoriesByDate)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories]));
+    const storiesData = (0, app_1.sortStoriesByDate)((0, app_1.removeDuplicateStories)([...latestHnStories, ...latestDevToStories, ...latestDevrelxStories, ...filteredGoogleNewsStories, ...latestWeeklyEventStories]));
     const html = `
     <html lang="en">
         ${head()}
