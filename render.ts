@@ -310,7 +310,7 @@ const heroStories = () => {
     </div>
     <div class="hero-story">
         <div class="hero-story-body">
-            <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg?w=156">
+            <img class="hero-story-image" src="https://carlyrichmondcom.files.wordpress.com/2022/05/pexels-photo-2833037.jpeg">
             <div class="hero-story-header hero-story-header-large">
                 <a target="_blank"
                     href="https://carlyrichmond.com/2022/05/17/speak-your-mind/?utm_campaign=DevRel%2BWeekly&utm_medium=web&utm_source=DevRel_Weekly_190">Community

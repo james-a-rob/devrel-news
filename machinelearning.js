@@ -52,7 +52,7 @@ const mlFilter = (stories) => {
     return stories.filter((story) => {
         const classifications = classifier.getClassifications(story.title);
         const valDifference = (classifications[0].value - classifications[1].value);
-        const articleOfInterest = valDifference > 0.00004;
+        const articleOfInterest = valDifference > 0.000004;
         console.log("- - ", story.title);
         console.log(articleOfInterest);
         console.log(classifier.classify(story.title));
