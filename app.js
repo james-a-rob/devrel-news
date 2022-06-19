@@ -56,6 +56,7 @@ const scrapeLatestHnStories = () => __awaiter(void 0, void 0, void 0, function* 
         "stripe",
         "keynote",
         "open source",
+        "open-source",
         "git",
         "conference",
         "github",

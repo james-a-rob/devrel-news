@@ -17,16 +17,16 @@ const nock_1 = __importDefault(require("nock"));
 const app_1 = require("./app");
 const nockBack = nock_1.default.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('record');
+nockBack.setMode('update');
 globals_1.jest.setTimeout(6000000);
 (0, globals_1.describe)('hn', () => {
-    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         globals_1.jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = yield nockBack('hn-response.json');
         const latestStories = yield (0, app_1.scrapeLatestHnStories)();
         nockDone();
         console.log(latestStories);
-        (0, globals_1.expect)(latestStories[0].title).toEqual("Generating a GraphQL API from schema using SQLite");
+        (0, globals_1.expect)(latestStories[0].title).toEqual("NextDNS API");
     }));
 });
 (0, globals_1.describe)('devrelx', () => {
@@ -56,7 +56,7 @@ globals_1.jest.setTimeout(6000000);
     }));
 });
 (0, globals_1.describe)('dx tips', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('dx-tips-response.json');
         const latestStories = yield (0, app_1.scrapeLatestDxTipsStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual("Resource: The Best DevTools Pitches of All Time");

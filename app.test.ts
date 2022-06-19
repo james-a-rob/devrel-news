@@ -16,18 +16,18 @@ import {
 
 const nockBack = nock.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('record');
+nockBack.setMode('update');
 
 jest.setTimeout(6000000);
 
 describe('hn', () => {
-    test('scrape stories', async () => {
+    test.only('scrape stories', async () => {
         jest.spyOn(Date, "now").mockReturnValue(new Date(1587893830000).getTime());
         const { nockDone } = await nockBack('hn-response.json')
         const latestStories = await scrapeLatestHnStories();
         nockDone();
         console.log(latestStories);
-        expect(latestStories[0].title).toEqual("Generating a GraphQL API from schema using SQLite");
+        expect(latestStories[0].title).toEqual("NextDNS API");
     });
 });
 
@@ -65,7 +65,7 @@ describe('weekly events', () => {
 });
 
 describe('dx tips', () => {
-    test.only('scrape stories', async () => {
+    test('scrape stories', async () => {
         const { nockDone } = await nockBack('dx-tips-response.json')
 
         const latestStories = await scrapeLatestDxTipsStories();

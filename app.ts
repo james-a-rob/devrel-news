@@ -89,6 +89,7 @@ export const scrapeLatestHnStories = async (): Promise<Story[]> => {
         "stripe",
         "keynote",
         "open source",
+        "open-source",
         "git",
         "conference",
         "github",
