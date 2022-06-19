@@ -34,6 +34,12 @@ interface WeeklyEventStory {
     pubDate: string
 }
 
+interface DxTipsStory {
+    title: string
+    link: string
+    pubDate: string
+}
+
 interface GoogleNewsStory {
     title: string
     link: string
@@ -152,6 +158,14 @@ export const scrapeLatestWeeklyEventStories = async (): Promise<Story[]> => {
     console.log(weeklyEventResponse.data);
     let weeklyEventStories = parser.parse(weeklyEventResponse.data).rss.channel.item.slice(0, 10);
     return Promise.all(weeklyEventStories.map(async (story: WeeklyEventStory) => ({ title: story.title, url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
+}
+
+export const scrapeLatestDxTipsStories = async (): Promise<Story[]> => {
+    let dxTipsResponse = await axios.get("https://dx.tips/rss.xml");
+    const parser = new XMLParser();
+    console.log(dxTipsResponse.data);
+    let dxTipsStories = parser.parse(dxTipsResponse.data).rss.channel.item.slice(0, 10);
+    return Promise.all(dxTipsStories.map(async (story: DxTipsStory) => ({ title: story.title, url: story.link!, created_at: story.pubDate, image: await urlToImage(story.link) })));
 }
 
 export const sortStoriesByDate = (stories: Story[]): Story[] => {

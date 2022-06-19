@@ -17,7 +17,7 @@ const nock_1 = __importDefault(require("nock"));
 const app_1 = require("./app");
 const nockBack = nock_1.default.back;
 nockBack.fixtures = __dirname + '/nockFixtures';
-nockBack.setMode('wild');
+nockBack.setMode('record');
 globals_1.jest.setTimeout(6000000);
 (0, globals_1.describe)('hn', () => {
     (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
@@ -47,10 +47,19 @@ globals_1.jest.setTimeout(6000000);
     }));
 });
 (0, globals_1.describe)('weekly events', () => {
-    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+    (0, globals_1.test)('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
         const { nockDone } = yield nockBack('weekly-events-response.json');
         const latestStories = yield (0, app_1.scrapeLatestWeeklyEventStories)();
         (0, globals_1.expect)(latestStories[0].title).toEqual(" July 12 - CZSK CMX Chapter Launch in Bratislava! | Calling on all Community Managers! ");
+        console.log(latestStories);
+        nockDone();
+    }));
+});
+(0, globals_1.describe)('dx tips', () => {
+    globals_1.test.only('scrape stories', () => __awaiter(void 0, void 0, void 0, function* () {
+        const { nockDone } = yield nockBack('dx-tips-response.json');
+        const latestStories = yield (0, app_1.scrapeLatestDxTipsStories)();
+        (0, globals_1.expect)(latestStories[0].title).toEqual("Resource: The Best DevTools Pitches of All Time");
         console.log(latestStories);
         nockDone();
     }));
